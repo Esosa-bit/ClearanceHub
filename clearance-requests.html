@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clearance Requests | ClearanceHub</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="logout.css">
+<link rel="stylesheet" href="clearance-requests.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+   <!--=============================
+            SIDEBAR
+    ==============================-->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Clearance Hub</span>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="admin-dashboard.html">
+                    <i class="fas fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="Aprofile.html">
+                    <i class="fa-regular fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-students.html">
+                    <i class="fas fa-users"></i>
+                    Manage Students
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="clearance-requests.html">
+                    <i class="fas fa-file-circle-check"></i>
+                    Clearance Requests
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    <i class="fas fa-chart-column"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="Anotifications.html">
+                    <i class="fa-regular fa-bell"></i>
+                    Notifications
+                </a>
+            </li>
+
+
+                   <li class="logout">
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-right-from-bracket"></i>
+                    Logout 
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!--=============================
+            MAIN CONTENT
+    ==============================-->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <h2>
+
+                <i class="fas fa-file-lines"></i>
+
+               Clearance Requests
+
+            </h2>
+
+            <div class="profile"
+            onclick="goToProfile()">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+               <div class="profile-info">
+                    <span class="welcome">Welcome</span>
+                    <span id="adminName">Admin</span>
+                </div>
+               </div>
+        </header>
+
+
+        <!-- CONTENT GRID -->
+
+        <section class="content-grid">
+
+            <!-- LEFT PANEL -->
+
+            <div class="request-panel">
+
+                <h2>Review Clearance Request</h2>
+
+                <div class="info-box">
+
+                    <i class="fas fa-circle-info"></i>
+
+                    <p>
+                        Review the student's request details,
+                        supporting documents and take
+                        appropriate action.
+                    </p>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Student</label>
+                    <input
+                    type="text"
+                    value="John Doe (20/CSC/123456)"
+                    readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Department</label>
+
+                    <select>
+
+                        <option>
+                            Faculty Office
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-group">
+                    <label>Purpose of Clearance</label>
+
+                    <input
+                    type="text"
+                    value="Final Year Clearance"
+                    readonly>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Date Requested
+                    </label>
+
+                    <input
+                    type="text"
+                    value="15 Jul 2026, 10:30 AM"
+                    readonly>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Supporting Document
+                    </label>
+
+                    <div class="document-box">
+
+                        <div class="document-info">
+
+                            <i class="fas fa-file-pdf"></i>
+
+                            <div>
+
+                                <strong>
+                                    clearance_request_john_doe.pdf
+                                </strong>
+
+                                <span>
+                                    PDF • 1.2 MB
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <button class="download-btn">
+
+                            <i class="fas fa-download"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>
+                        Additional Information
+                    </label>
+
+                    <textarea readonly>
+Requesting clearance for final year graduation.
+                    </textarea>
+
+                </div>
+
+                <label class="action-title">
+                    Actions
+                </label>
+
+                <div class="action-buttons">
+
+    <button
+        class="approve-btn"
+        data-id="1">
+
+        <i class="fas fa-check"></i>
+        Approve
+
+    </button>
+
+    <button
+        class="pending-btn"
+        data-id="1">
+
+        <i class="fas fa-clock"></i>
+        Mark Pending
+
+    </button>
+
+    <button
+        class="reject-btn"
+        data-id="1">
+
+        <i class="fas fa-xmark"></i>
+        Reject
+
+    </button>
+
+</div>
+
+                <div class="form-group">
+
+                    <label>
+                        Note (Optional)
+                    </label>
+
+                    <textarea
+                    placeholder="Add a note or reason for your decision..."></textarea>
+
+                </div>
+
+                <button class="submit-btn">
+                    Submit Decision
+                </button>
+
+            </div>
+                        <!-- RIGHT PANEL -->
+
+            <div class="right-panel">
+
+                <!-- GUIDELINES -->
+
+                <div class="guidelines-card">
+
+                    <h3>
+                        <i class="fas fa-clipboard-check"></i>
+                        Request Guidelines
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Ensure you have cleared any previous dues.
+                        </li>
+
+                        <li>
+                            Upload any required supporting documents.
+                        </li>
+
+                        <li>
+                            Provide accurate information.
+                        </li>
+
+                        <li>
+                            You will be notified once your request is reviewed.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- STATISTICS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card purple">
+
+                        <div class="stat-icon">
+                            <i class="fas fa-file-lines"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Total Request</span>
+
+                            <h2>24</h2>
+
+                            <small>All requests</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card orange">
+
+                        <div class="stat-icon">
+                            <i class="fas fa-spinner"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Pending</span>
+
+                            <h2>8</h2>
+
+                            <small>Awaiting review</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card green">
+
+                        <div class="stat-icon">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Approve</span>
+
+                            <h2>12</h2>
+
+                            <small>Successfully approved</small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="stat-card red">
+
+                        <div class="stat-icon">
+                            <i class="fas fa-circle-xmark"></i>
+                        </div>
+
+                        <div>
+
+                            <span>Reject</span>
+
+                            <h2>4</h2>
+
+                            <small>Requires attention</small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- REQUEST TABLE -->
+
+                <div class="table-card">
+
+                    <div class="table-header">
+
+                        <h2>
+                            All Clearance Requests
+                        </h2>
+
+                    </div>
+
+                    <!-- SEARCH + FILTERS -->
+
+                    <div class="table-controls">
+
+                        <div class="search-box">
+
+                            <i class="fas fa-search"></i>
+
+                            <input
+                            type="text"
+                            placeholder="Search by name, matric no. or ID">
+
+                        </div>
+
+                        </div>
+                    <!-- TABLE -->
+                     <div class="table-container">
+
+
+                    <table class="request-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Student Information
+                                </th>
+
+                                <th>
+                                    Department
+                                </th>
+
+                                <th>
+                                    Purpose
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                                <th>
+                                    Date Requested
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="requestTable">
+
+                            <!-- ROW 1 -->
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="student-info">
+
+                                        <div>
+
+                                            <h4>
+                                                John Doe
+                                            </h4>
+
+                                            <p>
+                                                20/CSC/123456
+                                            </p>
+
+                                            <small>
+                                                john.doe@example.com
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Faculty Office
+                                </td>
+
+                                <td>
+
+                                    <strong>
+                                        Final Year Clearance
+                                    </strong>
+
+                                    <br>
+
+                                    <small>
+                                        Graduation requirement
+                                    </small>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    15 Jul 2026
+                                </td>
+
+                            </tr>
+
+                            <!-- ROW 2 -->
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="student-info">
+
+                                        <div>
+
+                                            <h4>
+                                                Jane Smith
+                                            </h4>
+
+                                            <p>
+                                                20/CSC/654321
+                                            </p>
+
+                                            <small>
+                                                jane@example.com
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Library
+                                </td>
+
+                                <td>
+
+                                    <strong>
+                                        General Clearance
+                                    </strong>
+
+                                    <br>
+
+                                    <small>
+                                        Library book clearance
+                                    </small>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="status approved">
+                                        Approved
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    15 Jul 2026
+
+                                </td>
+
+                            </tr>
+
+                            <!-- ROW 3 -->
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="student-info">
+
+                                        <div>
+
+                                            <h4>
+                                                Michael Johnson
+                                            </h4>
+
+                                            <p>
+                                                20/CSC/789012
+                                            </p>
+
+                                            <small>
+                                                michael@example.com
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Faculty Office
+                                </td>
+
+                                <td>
+
+                                    <strong>
+                                        Transcript Request
+                                    </strong>
+
+                                    <br>
+
+                                    <small>
+                                        Academic transcript
+                                    </small>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    14 Jul 2026
+                    
+                                </td>
+
+                            </tr>
+
+                            <!-- ROW 4 -->
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="student-info">
+
+                                        <div>
+
+                                            <h4>
+                                                Sarah Williams
+                                            </h4>
+
+                                            <p>
+                                                20/CSC/345678
+                                            </p>
+
+                                            <small>
+                                                sarah@example.com
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    General Office
+                                </td>
+
+                                <td>
+
+                                    <strong>
+                                        Hostel Clearance
+                                    </strong>
+
+                                    <br>
+
+                                    <small>
+                                        Hostel accommodation
+                                    </small>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="status approved">
+                                        Approved
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    14 Jul 2026
+
+                                </td>
+
+                            </tr>
+
+                            <!-- ROW 5 -->
+
+                            <tr>
+
+                                <td>
+
+                                    <div class="student-info">
+                                        <div>
+
+                                            <h4>
+                                                David Brown
+                                            </h4>
+
+                                            <p>
+                                                20/CSC/901234
+                                            </p>
+
+                                            <small>
+                                                david@example.com
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </td>
+
+                                <td>
+                                    Scholarship Office
+                                </td>
+
+                                <td>
+
+                                    <strong>
+                                        Scholarship Clearance
+                                    </strong>
+
+                                    <br>
+
+                                    <small>
+                                        Outstanding balance
+                                    </small>
+
+                                </td>
+
+                                <td>
+
+                                    <span class="status rejected">
+                                        Rejected
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    13 Jul 2026
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+                    </div>
+
+                    <!-- FOOTER -->
+
+                    <div class="table-footer">
+
+                        <span>
+                            Showing 1 to 5 of 24 requests
+                        </span>
+
+                        <div class="pagination-buttons">
+
+                            <button class="page-btn">
+                                <i class="fas fa-angle-left"></i>
+                            </button>
+
+                            <button class="page btn active-page">
+                                1
+                            </button>
+
+                            <button class="page-btn">2</button>
+                            
+                            <button class="page-btn">3</button>
+
+                            <button class="page-btn">...</button>
+
+                            <button class="page-btn">5</button>
+
+                            <button class="page-btn">
+                                <i class="fas fa-angle-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    </div>
+<!-- ==========================================
+        LOGOUT POPUP
+========================================== -->
+
+<div class="logout-overlay" id="logoutOverlay">
+
+    <div class="logout-popup">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Log Out</h2>
+
+        <p>
+            Are you sure you want to log out of your account?<br>
+            You will need to sign in again to access your account.
+        </p>
+
+        <div class="logout-buttons">
+
+            <button
+                class="confirm-logout"
+                id="confirmLogout">
+
+                Yes, Log Out
+
+            </button>
+
+            <button
+                class="cancel-logout"
+                id="cancelLogout">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+        <div class="logout-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                For your security, please log out when you are done accessing your account.
+            </span>
+
+        </div>
+
+    </div>
+</div>
+<!-- =========================================
+VIEW REQUEST POPUP
+========================================= -->
+
+<div class="popup-overlay" id="viewPopup">
+
+    <div class="popup-box request-popup">
+
+        <div class="popup-header">
+
+            <h2>
+                <i class="fa-solid fa-file-circle-check"></i>
+                Request Details
+            </h2>
+
+            <button
+            class="close-popup"
+            onclick="closeViewPopup()">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <div class="popup-content">
+
+            <div class="detail-row">
+
+                <span>Student Name</span>
+
+                <strong id="popupStudent">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Matric Number</span>
+
+                <strong id="popupMatric">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Department</span>
+
+                <strong id="popupDepartment">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Purpose</span>
+
+                <strong id="popupPurpose">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Status</span>
+
+                <strong id="popupStatus">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Date Submitted</span>
+
+                <strong id="popupDate">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Comments</span>
+
+                <strong id="popupComments">
+                    -
+                </strong>
+
+            </div>
+
+            <div class="detail-row">
+
+                <span>Uploaded File</span>
+
+                <strong id="popupFile">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+APPROVE POPUP
+========================================= -->
+
+<div class="popup-overlay" id="approvePopup">
+
+    <div class="popup-box small-popup">
+
+        <i class="fa-solid fa-circle-check popup-icon success-icon"></i>
+
+        <h2>
+            Approve Request?
+        </h2>
+
+        <p>
+
+            This request will be marked as approved.
+
+        </p>
+
+        <div class="popup-actions">
+
+            <button
+            class="cancel-btn"
+            onclick="closeApprovePopup()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="approve-btn-popup"
+            id="approveBtn">
+
+                Approve
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+REJECT POPUP
+========================================= -->
+
+<div class="popup-overlay" id="rejectPopup">
+
+    <div class="popup-box small-popup">
+
+        <i class="fa-solid fa-circle-xmark popup-icon reject-icon"></i>
+
+        <h2>
+            Reject Request?
+        </h2>
+
+        <p>
+
+            This request will be marked as rejected.
+
+        </p>
+
+        <div class="popup-actions">
+
+            <button
+            class="cancel-btn"
+            onclick="closeRejectPopup()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="reject-btn-popup"
+            id="rejectBtn">
+
+                Reject
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================
+DELETE POPUP
+========================================= -->
+
+<div class="popup-overlay" id="deletePopup">
+
+    <div class="popup-box small-popup">
+
+        <i class="fa-solid fa-trash popup-icon delete-icon"></i>
+
+        <h2>
+            Delete Request?
+        </h2>
+
+        <p>
+
+            This action cannot be undone.
+
+        </p>
+
+        <div class="popup-actions">
+
+            <button
+            class="cancel-btn"
+            onclick="closeDeletePopup()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="delete-btn-popup"
+            id="deleteBtn">
+
+                Delete
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="popup-overlay" id="pendingPopup">
+
+    <div class="popup-box small-popup">
+
+        <i class="fa-solid fa-clock popup-icon"></i>
+
+        <h2>Mark Request Pending?</h2>
+
+        <p>
+            This request will be marked as pending.
+        </p>
+
+        <div class="popup-actions">
+
+            <button
+            class="cancel-btn"
+            onclick="closePendingPopup()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="approve-btn-popup"
+            id="pendingBtn">
+
+                Mark Pending
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- =========================================
+SUCCESS POPUP
+========================================= -->
+
+<div class="popup-overlay" id="successPopup">
+
+    <div class="popup-box small-popup">
+
+        <i class="fa-solid fa-circle-check popup-icon success-icon"></i>
+
+        <h2 id="successTitle">
+
+            Success
+
+        </h2>
+
+        <p id="successMessage">
+
+            Operation completed successfully.
+
+        </p>
+
+        <div class="popup-actions">
+
+            <button
+            class="ok-btn"
+            onclick="closeSuccessPopup()">
+
+                OK
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="popup-overlay" id="submitPopup">
+
+    <div class="popup-box small-popup">
+
+        <i class="fa-solid fa-paper-plane popup-icon success-icon"></i>
+
+        <h2>Submit Decision?</h2>
+
+        <p>
+            Are you sure you want to submit this decision?
+        </p>
+
+        <div class="popup-actions">
+
+            <button
+            class="cancel-btn"
+            onclick="closeSubmitPopup()">
+
+                Cancel
+
+            </button>
+
+            <button
+            class="approve-btn-popup"
+            id="confirmSubmitBtn">
+
+                Submit
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- =========================================
+TOAST
+========================================= -->
+
+<div class="toast" id="toast"></div>
+<script src="logout.js"></script>
+<script src="clearance-requests.js"></script>
+
+</body>
+</html>

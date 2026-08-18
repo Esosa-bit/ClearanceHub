@@ -1,0 +1,1539 @@
+/*==================================================
+                RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef3fb;
+    overflow-x:hidden;
+    color:#222;
+}
+
+/*==================================================
+                LAYOUT
+==================================================*/
+
+.container{
+    display:flex;
+    min-height:100vh;
+    overflow-x: auto;
+}
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar{
+
+    width:270px;
+    background:#1E293B;
+    color:#fff;
+
+    display:flex;
+    flex-direction:column;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    height:100vh;
+
+    box-shadow:4px 0 15px rgba(0,0,0,.15);
+
+}
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    padding:30px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    font-size:25px;
+    font-weight:700;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo i{
+
+    font-size:35px;
+
+    color:#A78BFA;
+
+}
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu{
+
+    list-style:none;
+
+    margin-top:30px;
+
+}
+
+.menu li{
+
+    margin:8px 18px;
+
+}
+
+.menu li a{
+
+    text-decoration:none;
+
+    color:#CBD5E1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+.menu li a i{
+
+    font-size:22px;
+
+    width:25px;
+
+    text-align:center;
+
+}
+
+/* Hover */
+
+.menu li a:hover{
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    color:#fff;
+
+    transform:translateX(5px);
+
+}
+
+/* Active Menu */
+
+.menu li.active a{
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    color:#fff;
+
+    box-shadow:0 8px 18px rgba(37,99,235,.35);
+    justify-content: flex-start;
+}
+
+/* Logout */
+
+#logoutBtn{
+
+    margin-top:auto;
+    margin-bottom:25px;
+
+}
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar{
+
+    height:85px;
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 35px;
+
+    color:#fff;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
+
+}
+
+/* Dashboard Title */
+
+.topbar h2{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.topbar h2 i{
+
+    font-size:30px;
+
+}
+/* ==========================================
+   PROFILE
+========================================== */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+cursor: pointer;
+    transition: 0.3s ease;
+   position: relative;
+}
+.profile:hover{
+    transform: scale(1.05);
+}
+.profile i{
+
+    font-size:45px;
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.profile-info .welcome{
+
+    font-size:13px;
+
+    opacity:.85;
+
+}
+
+.profile-info #studentName{
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+
+/*==================================================
+            NOTIFICATION BADGE
+==================================================*/
+
+.notification-count{
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:#ff3b3b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/*==================================================
+            MAIN CONTENT
+==================================================*/
+
+.main-content{
+    margin-left:270px;
+    width:calc(100% - 250px);
+    min-height:100vh;
+}
+
+
+/*==================================================
+            PAGE CONTENT
+==================================================*/
+
+.content{
+    padding:35px;
+}
+
+.content h2{
+    font-size:32px;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/*==================================================
+            INFORMATION BAR
+==================================================*/
+
+.info-box{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#edf4ff;
+    color:#245dff;
+    padding:15px 18px;
+    border-radius:10px;
+    margin-bottom:25px;
+    border-left:5px solid #245dff;
+}
+
+.info-box i{
+    font-size:18px;
+}
+
+/*==================================================
+            TWO COLUMN GRID
+==================================================*/
+
+.dues-grid{
+    display:grid;
+    grid-template-columns:250px 1fr;
+    gap:25px;
+    align-items:flex-start;
+}
+/*==================================================
+            PAYMENT FORM
+==================================================*/
+
+.payment-form{
+
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+   
+}
+
+.payment-form h3{
+    font-size:22px;
+    margin-bottom:25px;
+
+}
+
+/*==================================================
+            INPUT GROUPS
+==================================================*/
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#222;
+
+}
+
+.input-group label span{
+
+    color:#ff4b4b;
+
+}
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+    height:50px;
+    padding:0 15px;
+    border:1px solid #d9e1ef;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+    background:#fff;
+
+}
+
+.input-group input:focus,
+.input-group select:focus{
+
+    border-color:#245dff;
+    box-shadow:0 0 8px rgba(36,93,255,.2);
+
+}
+
+.input-group small{
+
+    display:block;
+    margin-top:8px;
+    color:#888;
+    font-size:13px;
+
+}
+
+/*==================================================
+            UPLOAD BOX
+==================================================*/
+
+.upload-box{
+
+    width:100%;
+    min-height:170px;
+    border:2px dashed #cfd9ea;
+    border-radius:12px;
+    background:#fafcff;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+    transition:.3s;
+    text-align:center;
+    padding:20px;
+
+}
+
+.upload-box:hover{
+
+    border-color:#245dff;
+    background:#edf4ff;
+
+}
+
+.upload-box i{
+
+    font-size:38px;
+    color:#245dff;
+    margin-bottom:15px;
+
+}
+
+.upload-box h4{
+
+    color:#245dff;
+    margin-bottom:5px;
+
+}
+
+.upload-box p{
+
+    color:#777;
+    margin-bottom:8px;
+
+}
+
+.upload-box small{
+
+    color:#999;
+
+}
+
+/*==================================================
+            SUBMIT BUTTON
+==================================================*/
+
+.submit-btn{
+
+    width:100%;
+    height:52px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#245dff;
+    color:#fff;
+
+    font-size:16px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.submit-btn:hover{
+
+    background:#1849d8;
+    transform:translateY(-2px);
+
+}
+
+.submit-btn i{
+
+    margin-right:8px;
+
+}
+
+/*==================================================
+            PAYMENT RECORDS
+==================================================*/
+
+.payment-records{
+
+    background:#fff;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+
+}
+
+.payment-records h3{
+
+    margin-bottom:20px;
+
+}
+
+/*==================================================
+            TABLE
+==================================================*/
+
+.table-wrapper{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    min-width:760px;
+    table-layout: fixed;
+}
+
+thead{
+
+    background:#f8faff;
+
+}
+
+thead th{
+
+    padding:15px;
+    text-align:left;
+    font-size:14px;
+    color:#444;
+    border-bottom:2px solid #edf1f7;
+
+}
+
+tbody td{
+
+    padding:16px 15px;
+    border-bottom:1px solid #edf1f7;
+    font-size:14px;
+    color:#555;
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#f8fbff;
+
+}
+
+/*==================================================
+            STATUS BADGES
+==================================================*/
+
+.status{
+
+    display:inline-block;
+    padding:7px 14px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:bold;
+
+}
+
+.verified{
+
+    background:#e9fff1;
+    color:#1b8e47;
+
+}
+
+.pending{
+
+    background:#fff5de;
+    color:#d98d00;
+
+}
+
+.review{
+
+    background:#edf4ff;
+    color:#245dff;
+
+}
+
+/*==================================================
+            ACTION BUTTON
+==================================================*/
+
+.view-btn{
+
+    width:35px;
+    height:35px;
+
+    border:none;
+    border-radius:50%;
+
+    background:#edf4ff;
+    color:#245dff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.view-btn:hover{
+
+    background:#245dff;
+    color:#fff;
+
+}
+
+/*==================================================
+            IMPORTANT NOTES
+==================================================*/
+
+.notes{
+
+    margin-top:30px;
+
+    background:#f4fff7;
+
+    border-left:5px solid #20b15a;
+
+    padding:22px;
+
+    border-radius:12px;
+    
+}
+
+.notes h3{
+
+    color:#168b44;
+
+    margin-bottom:18px;
+
+}
+
+.notes h3 i{
+
+    margin-right:8px;
+
+}
+
+.notes ul{
+
+    list-style:none;
+
+}
+
+.notes li{
+
+    position:relative;
+
+    padding-left:25px;
+
+    margin-bottom:14px;
+
+    color:#555;
+
+}
+
+.notes li::before{
+
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:#20b15a;
+
+    font-weight:bold;
+
+}
+
+/*==================================================
+            TOAST
+==================================================*/
+
+.toast{
+
+    position:fixed;
+
+    top:30px;
+    right:30px;
+
+    background:#245dff;
+    color:#fff;
+
+    padding:18px 22px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+    transform:translateX(120%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:.45s, opacity .45s;
+
+    z-index:999;
+
+}
+
+.toast.show{
+
+    transform:translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+}
+
+.toast i{
+
+    font-size:28px;
+
+}
+
+.toast h4{
+
+    margin-bottom:4px;
+
+}
+
+/*==================================================
+            SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+    height:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#245dff;
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf2fa;
+
+}
+
+/*==================================================
+                PAYMENT POPUP
+==================================================*/
+
+.popup-overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:1000;
+
+}
+
+.popup{
+
+    width:450px;
+
+    max-width:90%;
+
+    background:#fff;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    position:relative;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+    animation:popupShow .25s ease;
+
+}
+
+.popup h2{
+
+    color:#0c0c0c;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+.popup p{
+
+    margin:14px 0;
+
+    font-size:15px;
+
+    color:#444;
+
+}
+
+.popup p strong{
+
+    color:#111;
+
+}
+
+.close-popup{
+
+    position:absolute;
+
+    top:15px;
+    right:18px;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    color:#777;
+
+    transition:.3s;
+
+}
+
+.close-popup:hover{
+
+    color:#ff3b3b;
+
+}
+
+@keyframes popupShow{
+
+    from{
+
+        opacity:0;
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+.table-wrapper{
+    overflow-x: auto;
+}
+/*====================================================*
+    RESPONSIVE MEDIA QUERIES
+*====================================================*/
+
+@media (max-width: 1200px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .right-sidebar {
+        width: 100%;
+    }
+
+    .generator-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .notification-info h4 {
+        font-size: 20px;
+    }
+
+    .notification-info p {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 15px;
+    }
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 992px
+   Compact top bar
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+/* ---------------------------------------------
+       TOP BAR
+       Keep the existing top-bar content,
+       but hide Welcome and student's name.
+       --------------------------------------------- */
+
+ .profile-header {
+width: 100%;
+max-width: 100%;
+ margin: 0;
+ left: 0;
+ right: 0;
+box-sizing: border-box;
+ }
+
+ .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }
+
+/* Hide student's name / heading */
+ .profile-info {
+display: none;
+}
+
+.profile i {
+ font-size: 35px;
+ display: block;
+ margin: 0;
+    cursor: pointer;
+}
+.mobile-menu-button{
+    display: none;
+}
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 768px
+   MOBILE LAYOUT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       MAIN PAGE CONTAINER
+       ===================================================== */
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        display: block;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT
+       ===================================================== */
+
+    .main-content {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        left: 0;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       TOP BAR
+       ===================================================== */
+
+    .topbar {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        height: 70px;
+        min-height: 70px;
+
+        margin: 0;
+        padding: 10px 15px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    .topbar h2 {
+        margin: 0;
+        padding: 0;
+
+        min-width: 0;
+        max-width: 100%;
+
+        font-size: 18px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    .topbar p,
+    .topbar h1,
+    .welcome,
+    #adminName {
+        display: none;
+    }
+
+
+    /* =====================================================
+       PROFILE
+       ===================================================== */
+
+    .profile {
+        display: flex;
+
+        width: auto;
+        max-width: none;
+
+        margin-left: auto;
+        padding: 0;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        cursor: pointer;
+    }
+
+
+    .profile-info {
+        display: none;
+    }
+
+
+    .profile i {
+        display: block;
+
+        margin: 0;
+
+        font-size: 35px;
+
+        flex-shrink: 0;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU BUTTON
+       ===================================================== */
+
+    .mobile-menu-button {
+        position: static;
+
+        width: 44px;
+        height: 44px;
+
+        flex: 0 0 44px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        padding: 0;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #ffffff;
+
+        font-size: 23px;
+
+        cursor: pointer;
+
+        z-index: 10000;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+       ===================================================== */
+
+    .sidebar {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 250px;
+        max-width: 85vw;
+
+        height: 100vh;
+
+        z-index: 9999;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        box-sizing: border-box;
+    }
+
+
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+
+    /* =====================================================
+       SIDEBAR OVERLAY
+       ===================================================== */
+
+    .sidebar-overlay {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        z-index: 9998;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* =====================================================
+       SIDEBAR CLOSE BUTTON
+       ===================================================== */
+
+    .mobile-sidebar-close {
+        position: absolute;
+
+        top: 15px;
+        right: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.15);
+
+        color: white;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+
+    /* =====================================================
+       PAGE CONTENT
+       ===================================================== */
+
+    .content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 10px;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       DUES GRID
+       ===================================================== */
+
+    .dues-grid {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       PAYMENT FORM
+       ===================================================== */
+
+    .payment-form {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       PAYMENT RECORDS
+       ===================================================== */
+
+    .payment-records {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       TABLE
+       ===================================================== */
+
+    .table-wrapper {
+        display: block;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .table-wrapper table {
+        width: 100%;
+        min-width: 750px;
+
+        border-collapse: collapse;
+
+        box-sizing: border-box;
+    }
+
+
+    .table-wrapper th,
+    .table-wrapper td {
+        box-sizing: border-box;
+
+        white-space: normal;
+
+        word-break: normal;
+    }
+
+
+    /* =====================================================
+       NOTES
+       ===================================================== */
+
+    .notes {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 15px 0 0;
+
+        box-sizing: border-box;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =====================================================
+       FORM ELEMENTS
+       ===================================================== */
+
+    input,
+    select,
+    textarea,
+    button {
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       IMAGES
+       ===================================================== */
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       LONG TEXT
+       ===================================================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    label {
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =====================================================
+       OTHER CONTAINERS
+       ===================================================== */
+
+    .card,
+    .container,
+    .table-card,
+    .guidelines-card,
+    .request-card,
+    .request-history,
+    .right-panel,
+    .right-column,
+    .clearance-grid,
+    .dashboard-content,
+    .page-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       STAT CARDS
+       ===================================================== */
+
+    .stat-card {
+        display: none;
+    }
+}
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .profile-header {
+        min-height: 65px;
+        padding: 8px 12px;
+    }
+
+
+    .profile-header .profile-icon {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+    }
+
+
+    .profile-header .profile-icon i {
+        font-size: 22px;
+    }
+
+
+    .sidebar {
+        width: 235px;
+    }
+
+
+    .mobile-menu-button {
+        width: 42px;
+        height: 42px;
+
+        top: 11px;
+        left: 11px;
+
+        font-size: 21px;
+    }
+}
+@media (max-width: 992px) {
+    .topbar h2 .fa-money-bill-wave{
+        display: none;
+    }
+}
+@media (min-width: 993px) {
+    .mobile-menu-button{
+        display: none;
+    }
+}

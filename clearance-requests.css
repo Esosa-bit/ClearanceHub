@@ -1,0 +1,2738 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/*======================================================
+CLEARANCE REQUESTS PAGE
+PART 1
+======================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f6fb;
+    overflow-x:auto;
+}
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+/*====================================================
+                SIDEBAR
+====================================================*/
+
+.sidebar{
+
+    width:270px;
+    display:flex;
+    flex-direction:column;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    height:100vh;
+    background:linear-gradient(180deg,#1E1B4B,#312E81);
+
+    color:white;
+
+    box-shadow:5px 0 18px rgba(0,0,0,.12);
+}
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    padding:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    font-size:25px;
+    font-weight:700;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo i{
+
+    font-size:35px;
+
+    color:#C4B5FD;
+}
+/* ==========================================
+   MENU
+========================================== */
+
+.menu{
+
+    list-style:none;
+
+    margin-top:30px;
+
+}
+
+.menu li{
+
+    margin:8px 18px;
+
+}
+
+.menu li a{
+
+    text-decoration:none;
+
+    color:#CBD5E1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+.menu li a i{
+
+    font-size:20px;
+
+    width:25px;
+
+    text-align:center;
+
+}
+
+/* Hover */
+
+.menu li a:hover{
+
+    background:rgba(225,225,225,.08);
+
+    color:#fff;
+
+    transform:translateX(5px);
+
+}
+
+/* Active Menu */
+
+.menu li.active a{
+
+    background:linear-gradient(135deg,#6D28D9,#A855F7);
+
+    color:#fff;
+
+    box-shadow:0 8px 18px rgba(109,40,217,.35);
+
+}
+
+/* Logout */
+
+#logoutBtn{
+
+    margin-top:auto;
+    margin-bottom:25px;
+
+}
+
+/*======================================================
+MAIN CONTENT
+======================================================*/
+
+.main-content{
+    margin-left:270px;
+    width:calc(100% - 270px);
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar{
+
+    height:85px;
+
+    background:linear-gradient(180deg,#1E1B4B,#312E81);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0px 35px;
+
+    color:#fff;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
+    
+    margin-left: -25px;
+}
+
+/* Dashboard Title */
+
+.topbar h2{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.topbar h2 i{
+
+    font-size:30px;
+
+}
+/* ==========================================
+   PROFILE
+========================================== */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+cursor: pointer;
+    transition: 0.3s ease;
+   position: relative;
+}
+.profile:hover{
+    transform: scale(1.05);
+}
+
+.profile i{
+
+    font-size:45px;
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.profile-info .welcome{
+
+    font-size:13px;
+
+    opacity:.85;
+
+}
+
+.profile-info #studentName{
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+
+/*=========================
+        HOVER
+=========================*/
+
+.menu li a:hover{
+
+    background:#123bdb;
+
+    color:#fff;
+
+}
+
+
+/*=========================
+        ACTIVE
+=========================*/
+
+.menu .active a{
+
+    background:#1d4ed8;
+
+    color:#fff;
+
+    box-shadow:
+
+    0 8px 20px
+
+    rgba(37,99,235,.35);
+
+}
+/* =========================================================
+   GLOBAL BOX SIZING
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTENT GRID
+   ========================================================= */
+
+.content-grid {
+    display: grid;
+
+    grid-template-columns: 500px minmax(0, 1fr);
+
+    gap: 30px;
+
+    width: 100%;
+    max-width: 100%;
+
+    padding: 30px;
+
+    margin: 0;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT FORM PANEL
+   ========================================================= */
+
+.request-panel {
+    width: 100%;
+    min-width: 0;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    border: 1px solid #ececec;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, .04);
+
+    box-sizing: border-box;
+}
+
+
+.request-panel h2 {
+    color: #1b1748;
+
+    font-size: 30px;
+
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   INFORMATION BOX
+   ========================================================= */
+
+.info-box {
+    background: #edf4ff;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+.info-box i {
+    color: #2563eb;
+
+    margin-top: 2px;
+
+    flex-shrink: 0;
+}
+
+
+.info-box p {
+    color: #36507a;
+
+    line-height: 1.5;
+
+    font-size: 14px;
+
+    margin: 0;
+
+    min-width: 0;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 18px;
+
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+    color: #1f1f45;
+}
+
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dcdfe8;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #fff;
+
+    font-size: 15px;
+
+    box-sizing: border-box;
+}
+
+
+.form-group textarea {
+    min-height: 90px;
+
+    resize: none;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #7c3aed;
+}
+
+
+/* =========================================================
+   DOCUMENT BOX
+   ========================================================= */
+
+.document-box {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    gap: 10px;
+
+    box-sizing: border-box;
+}
+
+
+.document-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+
+.document-info i {
+    font-size: 28px;
+
+    color: #ef4444;
+
+    flex-shrink: 0;
+}
+
+
+.document-info strong {
+    display: block;
+
+    font-size: 14px;
+
+    color: #1f1f45;
+
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+}
+
+
+.document-info span {
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+.download-btn {
+    width: 40px;
+    height: 40px;
+
+    min-width: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ede9fe;
+
+    color: #6d28d9;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.action-title {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+}
+
+
+.action-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    min-width: 0;
+}
+
+
+.action-buttons button {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+}
+
+
+.approve-btn {
+    border: 1px solid #22c55e;
+
+    background: #dcfce7;
+
+    color: #15803d;
+}
+
+
+.pending-btn {
+    border: 1px solid #f59e0b;
+
+    background: #fef3c7;
+
+    color: #b45309;
+}
+
+
+.reject-btn {
+    border: 1px solid #ef4444;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+.action-buttons button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.submit-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6d28d9,
+            #7c3aed
+        );
+
+    color: #fff;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    box-sizing: border-box;
+}
+
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   RIGHT SECTION
+   ========================================================= */
+
+.right-panel {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    /*
+       Prevent the right side from forcing
+       the entire page wider.
+    */
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   GUIDELINES CARD
+   ========================================================= */
+
+.guidelines-card {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    background: #fff;
+
+    border: 1px solid #d7ead9;
+
+    border-left: 5px solid #22c55e;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+
+.guidelines-card h3 {
+    color: #166534;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 0;
+
+    margin-bottom: 18px;
+}
+
+
+.guidelines-card ul {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+.guidelines-card li {
+    margin-bottom: 12px;
+
+    color: #374151;
+
+    position: relative;
+
+    padding-left: 24px;
+}
+
+
+.guidelines-card li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #16a34a;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   STATISTICS CARDS
+   ========================================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 2px;
+
+    width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+.stat-card {
+    background: #fff;
+
+    border-radius: 16px;
+
+    padding: 12px;
+
+    border: 1px solid #ececec;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, .04);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+.stat-card span,
+.stat-card h2,
+.stat-card small {
+    overflow-wrap: break-word;
+}
+
+
+.stat-card h2 {
+    font-size: 18px;
+
+    color: #191547;
+
+    margin: 0 0 3px;
+    line-height: 1.1;
+}
+
+
+.stat-icon {
+    width: 34px;
+    height: 34px;
+
+    min-width: 34px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+
+.stat-card.purple .stat-icon {
+    background: #ede9fe;
+
+    color: #7c3aed;
+}
+
+
+.stat-card.orange .stat-icon {
+    background: #fef3c7;
+
+    color: #d97706;
+}
+
+
+.stat-card.green .stat-icon {
+    background: #dcfce7;
+
+    color: #16a34a;
+}
+
+
+.stat-card.red .stat-icon {
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   TABLE CARD
+   ========================================================= */
+
+.table-card {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    margin-top: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    /*
+       IMPORTANT:
+       The table card itself DOES NOT scroll.
+       Only .table-container scrolls.
+    */
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.table-header {
+    width: 100%;
+
+    padding: 24px 30px 20px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+}
+
+
+.table-header h2 {
+    margin: 0 0 22px;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    color: #151a4a;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+   ========================================================= */
+
+.search-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 580px;
+
+    box-sizing: border-box;
+}
+
+
+.search-box input {
+    width: 280px;
+    max-width: 100%;
+
+    padding: 13px 15px 13px 45px;
+
+    border: 1px solid #dcdfe8;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    margin-left: 8px;
+
+    margin-bottom: 8px;
+
+    box-sizing: border-box;
+}
+
+
+.search-box i {
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #94a3b8;
+}
+
+
+/* =========================================================
+   TABLE SCROLL CONTAINER
+   ========================================================= */
+
+/*
+   THIS IS THE ONLY ELEMENT THAT GETS
+   HORIZONTAL SCROLLING.
+*/
+
+.table-container {
+    width: 100%;
+    max-width: 100%;
+
+    min-width: 0;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+/*
+   Supports both:
+   class="request-table"
+   and
+   class="requests-table"
+*/
+
+.request-table,
+.requests-table {
+    width: 100%;
+
+    min-width: 950px;
+
+    border-collapse: collapse;
+
+    table-layout: fixed;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.request-table thead,
+.requests-table thead {
+    background: #fafbfe;
+}
+
+
+.request-table th,
+.requests-table th {
+    padding: 18px 25px;
+
+    text-align: left;
+
+    vertical-align: middle;
+
+    color: #171c48;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    border-top: 1px solid #e5e7eb;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+.request-table td,
+.requests-table td {
+    padding: 20px 25px;
+
+    background: #ffffff;
+
+    color: #252a4a;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid #e8eaf0;
+
+    vertical-align: middle;
+}
+
+
+.request-table tbody tr:last-child td,
+.requests-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.request-table tbody tr:hover td,
+.requests-table tbody tr:hover td {
+    background: #fafbff;
+}
+
+
+/* =========================================================
+   TABLE COLUMN WIDTHS
+   ========================================================= */
+
+.request-table th:nth-child(1),
+.request-table td:nth-child(1),
+.requests-table th:nth-child(1),
+.requests-table td:nth-child(1) {
+    width: 27%;
+}
+
+
+.request-table th:nth-child(2),
+.request-table td:nth-child(2),
+.requests-table th:nth-child(2),
+.requests-table td:nth-child(2) {
+    width: 14%;
+}
+
+
+.request-table th:nth-child(3),
+.request-table td:nth-child(3),
+.requests-table th:nth-child(3),
+.requests-table td:nth-child(3) {
+    width: 20%;
+}
+
+
+.request-table th:nth-child(4),
+.request-table td:nth-child(4),
+.requests-table th:nth-child(4),
+.requests-table td:nth-child(4) {
+    width: 12%;
+}
+
+
+.request-table th:nth-child(5),
+.request-table td:nth-child(5),
+.requests-table th:nth-child(5),
+.requests-table td:nth-child(5) {
+    width: 15%;
+}
+
+
+.request-table th:nth-child(6),
+.request-table td:nth-child(6),
+.requests-table th:nth-child(6),
+.requests-table td:nth-child(6) {
+    width: 12%;
+}
+
+
+/* =========================================================
+   STUDENT INFORMATION
+   ========================================================= */
+
+.student-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    min-width: 0;
+}
+
+
+.student-info .student-avatar {
+    width: 46px;
+    height: 46px;
+
+    min-width: 46px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+.student-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+}
+
+
+.student-details h4 {
+    font-size: 15px;
+
+    color: #1f2937;
+
+    margin: 0;
+}
+
+
+.student-details p {
+    font-size: 13px;
+
+    color: #6b7280;
+
+    margin: 0;
+}
+
+
+.student-details .student-name {
+    font-weight: 700;
+
+    color: #171c48;
+}
+
+
+.student-details .student-matric {
+    color: #6d7285;
+
+    font-size: 13px;
+}
+
+
+.student-details .student-email {
+    color: #777c90;
+
+    font-size: 12px;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   PURPOSE
+   ========================================================= */
+
+.purpose-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    min-width: 0;
+}
+
+
+.purpose-title {
+    font-weight: 700;
+
+    color: #171c48;
+}
+
+
+.purpose-description {
+    font-size: 13px;
+
+    color: #74798d;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.status,
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 8px 15px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.status.pending,
+.status-badge.pending {
+    background: #fff2d9;
+
+    color: #d58a18;
+}
+
+
+.status.approved,
+.status-badge.approved {
+    background: #e3f5e9;
+
+    color: #279451;
+}
+
+
+.status.rejected,
+.status-badge.rejected {
+    background: #fde5e7;
+
+    color: #d83c45;
+}
+
+
+.status-badge.review {
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   PRIORITY BADGES
+   ========================================================= */
+
+.priority {
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.priority.high {
+    background: #fee2e2;
+
+    color: #dc2626;
+}
+
+
+.priority.medium {
+    background: #fef3c7;
+
+    color: #d97706;
+}
+
+
+.priority.low {
+    background: #dcfce7;
+
+    color: #16a34a;
+}
+
+
+/* =========================================================
+   TABLE ACTION BUTTONS
+   ========================================================= */
+
+.table-actions {
+    display: flex;
+
+    gap: 8px;
+}
+
+
+.action-btn {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: .3s;
+}
+
+
+.action-btn:hover {
+    transform: translateY(-2px);
+}
+
+
+.view-action {
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+
+.edit-action {
+    background: #ede9fe;
+
+    color: #7c3aed;
+}
+
+
+.delete-action {
+    background: #fef2f2;
+
+    color: #dc2626;
+}
+
+
+/* =========================================================
+   TABLE FOOTER
+   ========================================================= */
+
+.table-footer {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px 25px;
+
+    border-top: 1px solid #ececec;
+
+    box-sizing: border-box;
+}
+
+
+.pagination-info {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+.pagination-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+
+.page-btn {
+    min-width: 40px;
+
+    height: 40px;
+
+    border: 1px solid #dcdfe8;
+
+    background: #fff;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.page-btn:hover {
+    background: #f3f4f6;
+}
+
+
+.page-btn.active,
+.active-page {
+    background: #7c3aed;
+
+    color: #fff;
+
+    border-color: #7c3aed;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+
+.empty-state i {
+    font-size: 60px;
+
+    color: #cbd5e1;
+
+    margin-bottom: 15px;
+}
+
+
+.empty-state h3 {
+    color: #334155;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-state p {
+    color: #64748b;
+}
+
+
+/* =========================================================
+   POPUP OVERLAY
+   ========================================================= */
+
+.popup-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .45);
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 9999;
+
+    backdrop-filter: blur(4px);
+
+    padding: 20px;
+
+    box-sizing: border-box;
+}
+
+
+.popup-overlay.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   POPUP BOX
+   ========================================================= */
+
+.popup-box {
+    background: #fff;
+
+    width: 600px;
+
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    animation: popupShow .3s ease;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, .15);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SMALL POPUPS
+   ========================================================= */
+
+.small-popup {
+    width: 450px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   POPUP HEADER
+   ========================================================= */
+
+.popup-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.popup-header h2 {
+    color: #1E1B4B;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0;
+}
+
+
+.close-popup {
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    font-size: 24px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   POPUP DETAIL ROW
+   ========================================================= */
+
+.detail-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+
+.detail-row span {
+    color: #64748B;
+
+    font-weight: 500;
+}
+
+
+.detail-row strong {
+    color: #1E1B4B;
+
+    text-align: right;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   POPUP ICONS
+   ========================================================= */
+
+.popup-icon {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+}
+
+
+.success-icon {
+    color: #22C55E;
+}
+
+
+.reject-icon {
+    color: #EF4444;
+}
+
+
+.delete-icon {
+    color: #F97316;
+}
+
+
+/* =========================================================
+   POPUP ACTIONS
+   ========================================================= */
+
+.popup-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.cancel-btn,
+.approve-btn-popup,
+.reject-btn-popup,
+.delete-btn-popup,
+.ok-btn {
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+.cancel-btn {
+    background: #E2E8F0;
+}
+
+
+.approve-btn-popup {
+    background: #22C55E;
+
+    color: white;
+}
+
+
+.reject-btn-popup {
+    background: #EF4444;
+
+    color: white;
+}
+
+
+.delete-btn-popup {
+    background: #F97316;
+
+    color: white;
+}
+
+
+.ok-btn {
+    padding: 12px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563EB,
+            #7C3AED
+        );
+
+    color: white;
+}
+
+
+/* =========================================================
+   POPUP ANIMATION
+   ========================================================= */
+
+@keyframes popupShow {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-20px)
+            scale(.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   PAGE OVERFLOW PROTECTION
+   ========================================================= */
+
+/*
+   This prevents the CONTENT from creating
+   a horizontal scrollbar.
+
+   The table's .table-container is the
+   ONLY horizontal scrolling area.
+*/
+
+.main-content {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+.content-grid,
+.request-panel,
+.right-panel,
+.table-card,
+.table-header,
+.table-footer {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   IMPORTANT TABLE RULE
+   ========================================================= */
+
+.table-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+
+/*
+   Do NOT add overflow-x:auto to:
+   .content-grid
+   .right-panel
+   .table-card
+   .main-content
+
+   Only .table-container should scroll.
+*/
+/*====================================================*
+    RESPONSIVE MEDIA QUERIES
+*====================================================*/
+
+@media (max-width: 1200px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .right-sidebar {
+        width: 100%;
+    }
+
+    .generator-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .notification-info h4 {
+        font-size: 20px;
+    }
+
+    .notification-info p {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 15px;
+    }
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 992px
+   Compact top bar
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+/* ---------------------------------------------
+       TOP BAR
+       Keep the existing top-bar content,
+       but hide Welcome and student's name.
+       --------------------------------------------- */
+
+ .profile-header {
+width: 100%;
+max-width: 100%;
+ margin: 0;
+ left: 0;
+ right: 0;
+box-sizing: border-box;
+ }
+
+ .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }
+
+/* Hide student's name / heading */
+ .profile-info {
+display: none;
+}
+
+.profile i {
+ font-size: 35px;
+ display: block;
+ margin: 0;
+    cursor: pointer;
+}
+.mobile-menu-button{
+    display: none;
+}
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 768px
+   MOBILE LAYOUT
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* =====================================================
+       GLOBAL RESET
+       ===================================================== */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       DASHBOARD WRAPPER
+       ===================================================== */
+
+    .dashboard {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        display: block;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       MAIN CONTENT
+       ===================================================== */
+
+    .main-content {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        left: 0;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+
+        transition: none;
+    }
+
+
+    /* =====================================================
+       TOP BAR
+       ===================================================== */
+
+    .topbar {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        height: 70px;
+        min-height: 70px;
+
+        margin: 0;
+        padding: 10px 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 10px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    /* TOPBAR TITLE */
+
+    .topbar h2 {
+        display: flex;
+        align-items: center;
+
+        min-width: 0;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        font-size: 18px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    /* HIDE WELCOME / NAME */
+
+    .topbar p,
+    .topbar h1,
+    .welcome,
+    #adminName {
+        display: none;
+    }
+
+
+    /* =====================================================
+       PROFILE
+       ===================================================== */
+
+    .profile {
+        display: flex;
+
+        width: auto;
+        max-width: none;
+
+        margin-left: auto;
+        padding: 0;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+
+        cursor: pointer;
+    }
+
+
+    .profile-info {
+        display: none;
+    }
+
+
+    .profile i {
+        display: block;
+
+        margin: 0;
+
+        font-size: 35px;
+
+        flex-shrink: 0;
+
+        cursor: pointer;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+       ===================================================== */
+
+    .sidebar {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 250px;
+        max-width: 85vw;
+
+        height: 100vh;
+
+        margin: 0;
+        padding: 0;
+
+        z-index: 9999;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+
+    /* =====================================================
+       SIDEBAR OVERLAY
+       ===================================================== */
+
+    .sidebar-overlay {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        margin: 0;
+        padding: 0;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        z-index: 9998;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+
+
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* =====================================================
+       MOBILE MENU BUTTON
+       ===================================================== */
+
+    .mobile-menu-button {
+        position: static;
+
+        width: 44px;
+        height: 44px;
+
+        flex: 0 0 44px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        padding: 0;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #ffffff;
+
+        font-size: 23px;
+
+        cursor: pointer;
+
+        z-index: 10000;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       SIDEBAR CLOSE BUTTON
+       ===================================================== */
+
+    .mobile-sidebar-close {
+        position: absolute;
+
+        top: 15px;
+        right: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        margin: 0;
+        padding: 0;
+
+        border: none;
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.15);
+
+        color: white;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+
+    /* =====================================================
+       CONTENT GRID
+       ===================================================== */
+
+    .content-grid {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 10px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =====================================================
+       LEFT REQUEST PANEL
+       ===================================================== */
+
+    .request-panel {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       RIGHT PANEL
+       ===================================================== */
+
+    .right-panel {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       GUIDELINES
+       ===================================================== */
+
+    .guidelines-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+
+        word-break: break-word;
+    }
+
+
+    /* =====================================================
+       STATISTICS
+       ===================================================== */
+
+    .stats-grid {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        box-sizing: border-box;
+    }
+
+
+    .stat-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       TABLE CARD
+       ===================================================== */
+
+    .table-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       TABLE HEADER
+       ===================================================== */
+
+    .table-header {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    .table-header h2 {
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =====================================================
+       SEARCH / FILTER AREA
+       ===================================================== */
+
+    .table-controls {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        overflow: hidden;
+    }
+
+
+    .search-box {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        align-items: center;
+    }
+
+
+    .search-box input {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       TABLE SCROLLING
+       ===================================================== */
+
+    .table-card {
+        overflow: hidden !important;
+    }
+
+
+    .request-table {
+        width: 750px;
+
+        min-width: 750px;
+
+        border-collapse: collapse;
+
+        box-sizing: border-box;
+    }
+
+
+    /*
+       ONLY THE TABLE IS ALLOWED TO SCROLL.
+       THE ENTIRE PAGE WILL NOT SCROLL SIDEWAYS.
+    */
+
+    .table-card {
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .request-table th,
+    .request-table td {
+        box-sizing: border-box;
+
+        white-space: normal;
+
+        word-break: normal;
+    }
+
+
+    /* =====================================================
+       TABLE FOOTER
+       ===================================================== */
+
+    .table-footer {
+        width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    .pagination-buttons {
+        max-width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 5px;
+    }
+
+
+    /* =====================================================
+       FORM ELEMENTS
+       ===================================================== */
+
+    .form-group {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    input,
+    select,
+    textarea,
+    button {
+        max-width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+    }
+
+
+    textarea {
+        resize: vertical;
+    }
+
+
+    /* =====================================================
+       DOCUMENT BOX
+       ===================================================== */
+
+    .document-box {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    .document-info {
+        min-width: 0;
+        max-width: calc(100% - 50px);
+    }
+
+
+    .document-info strong,
+    .document-info span {
+        max-width: 100%;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* =====================================================
+       ACTION BUTTONS
+       ===================================================== */
+
+    .action-buttons {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+        box-sizing: border-box;
+    }
+
+
+    .action-buttons button {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       IMAGES
+       ===================================================== */
+
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+        height: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       LONG TEXT
+       ===================================================== */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    strong,
+    small,
+    label {
+        max-width: 100%;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =====================================================
+       POPUPS
+       ===================================================== */
+
+    .popup-overlay {
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    .popup-box {
+        width: calc(100% - 30px);
+        max-width: 500px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       TOAST
+       ===================================================== */
+
+    .toast {
+        max-width: calc(100% - 30px);
+
+        box-sizing: border-box;
+
+        overflow-wrap: break-word;
+    }
+
+
+    /* =====================================================
+       FINAL OVERFLOW PROTECTION
+       ===================================================== */
+
+    .request-panel,
+    .right-panel,
+    .guidelines-card,
+    .stats-grid,
+    .stat-card,
+    .table-card,
+    .table-controls,
+    .search-box,
+    .request-panel,
+    .content-grid {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+}
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .profile-header {
+        min-height: 65px;
+        padding: 8px 12px;
+    }
+
+
+    .profile-header .profile-icon {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+    }
+
+
+    .profile-header .profile-icon i {
+        font-size: 22px;
+    }
+
+
+    .sidebar {
+        width: 235px;
+    }
+
+
+    .mobile-menu-button {
+        width: 42px;
+        height: 42px;
+
+        top: 11px;
+        left: 11px;
+
+        font-size: 21px;
+    }
+}
+@media (max-width: 992px) {
+    .topbar h2 .fa-file-lines{
+        display: none;
+    }
+}
+@media (min-width: 993px) {
+    .mobile-menu-button{
+        display: none;
+    }
+}

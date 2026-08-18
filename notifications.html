@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notifications | ClearanceHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="notifications.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="logout.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+            SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <div class="logo-text">
+                <h2>Clearance</h2>
+                <h2>Hub</h2>
+            </div>
+
+        </div>
+
+
+        <ul class="menu">
+
+            <li>
+                <a href="Sdashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="Sprofile.html">
+                    <i class="fa-regular fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="facultydues.html">
+                    <i class="fa-solid fa-money-bill"></i>
+                    Faculty Dues
+                </a>
+            </li>
+
+            <li>
+                <a href="clearancerequest.html">
+                    <i class="fa-regular fa-file-lines"></i>
+                    Clearance Requests
+                </a>
+            </li>
+
+
+            <!-- ACTIVE PAGE -->
+
+            <li class="active">
+
+                <a href="notifications.html">
+
+                    <div class="menu-left">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        Notifications
+
+                    </div>
+                </a>
+
+            </li>
+
+
+            <li class="logout">
+
+                <a href="#"
+                    id="logoutBtn">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    Logout
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- ==========================
+            MAIN CONTENT
+    ============================ -->
+
+    <main class="main-content">
+
+        <!-- TOP NAVBAR -->
+
+        <header class="topbar">
+              
+            <h2>
+                <i class="fa-solid fa-bell"></i>
+
+                Notifications
+             </h2>
+    
+          <div class="profile"
+            onclick="goToProfile()">
+    
+                <i class="fa-solid fa-circle-user"></i>
+
+                <div class="profile-info">
+
+                    <span class="welcome">
+
+                        Welcome
+
+                    </span>
+
+                    <span id="studentName">
+
+                        Student
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ======================
+            NOTIFICATION SECTION
+        ======================= -->
+
+        <section class="notification-container">
+
+            <div class="notification-header">
+
+                <div>
+
+                    <h2>All Notifications</h2>
+
+                    <p>
+                        Stay updated with your clearance activities.
+                    </p>
+
+                </div>
+
+
+                <button id="markAll">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    Mark all as read
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Notification List -->
+
+            <div class="notification-list">
+
+
+                <!-- 1 -->
+
+                <div class="notification-card unread">
+
+                    <span class="blue-dot"></span>
+
+                    <div class="icon payment">
+
+                        <i class="fa-regular fa-credit-card"></i>
+
+                    </div>
+                     <button class="delete-notification">
+        <i class="fa-solid fa-trash"></i>
+    </button>
+
+                    <div class="notification-text">
+
+                        <h3>Payment Successful</h3>
+
+                        <p>
+                            Your payment of ₦15,000 for Faculty
+                            Dues has been confirmed.
+                        </p>
+
+                    </div>
+
+                    <div class="notification-right">
+
+                        <small>10 mins ago</small>
+
+                        <span class="status new">
+                            New
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 2 -->
+
+                <div class="notification-card unread">
+
+                    <span class="blue-dot"></span>
+
+                    <div class="icon clearance">
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                    </div>
+
+                    <div class="notification-text">
+
+                        <h3>Clearance Request Received</h3>
+
+                        <p>
+                            Your clearance request has been submitted
+                            successfully and is pending review.
+                        </p>
+
+                    </div>
+
+                    <div class="notification-right">
+
+                        <small>30 mins ago</small>
+
+                        <span class="status new">
+                            New
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 3 -->
+
+                <div class="notification-card unread">
+
+                    <span class="blue-dot"></span>
+
+                    <div class="icon pending">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                    </div>
+
+                    <div class="notification-text">
+
+                        <h3>Document Verification Pending</h3>
+
+                        <p>
+                            Please upload your transcript
+                            for verification.
+                        </p>
+
+                    </div>
+
+                    <div class="notification-right">
+
+                        <small>1 hour ago</small>
+
+                        <span class="status new">
+                            New
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 4 -->
+
+                <div class="notification-card">
+
+                    <span class="blue-dot invisible"></span>
+
+                    <div class="icon approved">
+
+                        <i class="fa-regular fa-clipboard"></i>
+
+                    </div>
+
+                    <div class="notification-text">
+
+                        <h3>Department Approval</h3>
+
+                        <p>
+                            Your request has been approved by
+                            the Computer Science Department.
+                        </p>
+
+                    </div>
+
+                    <div class="notification-right">
+
+                        <small>Yesterday, 4:20 PM</small>
+
+                        <span class="status read">
+                            Read
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- 5 -->
+
+                <div class="notification-card">
+
+                    <span class="blue-dot invisible"></span>
+
+                    <div class="icon reminder">
+
+                        <i class="fa-regular fa-bell"></i>
+
+                    </div>
+
+                    <div class="notification-text">
+
+                        <h3>Reminder</h3>
+
+                        <p>
+                            You have pending clearance requirements.
+                            Please check your dashboard.
+                        </p>
+
+                    </div>
+
+                    <div class="notification-right">
+
+                        <small>2 days ago</small>
+
+                        <span class="status read">
+                            Read
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="footer-text">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Showing latest notifications
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =============================
+        POPUP NOTIFICATION
+================================ -->
+
+<div id="toast" class="toast">
+
+    <i class="fa-solid fa-bell"></i>
+
+    <div>
+
+        <h4>New Notification</h4>
+
+        <p>
+            Your clearance status has been updated.
+        </p>
+
+    </div>
+
+</div>
+<!-- ==========================================
+        LOGOUT POPUP
+========================================== -->
+
+<div class="logout-overlay" id="logoutOverlay">
+
+    <div class="logout-popup">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Log Out</h2>
+
+        <p>
+            Are you sure you want to log out of your account?<br>
+            You will need to sign in again to access your account.
+        </p>
+
+        <div class="logout-buttons">
+
+            <button
+                class="confirm-logout"
+                id="confirmLogout">
+
+                Yes, Log Out
+
+            </button>
+
+            <button
+                class="cancel-logout"
+                id="cancelLogout">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+        <div class="logout-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                For your security, please log out when you are done accessing your account.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- JavaScript -->
+
+<script src="notifications.js"></script>
+<script src="logout.js"></script>
+</body>
+</html>

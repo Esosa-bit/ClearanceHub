@@ -1,0 +1,1557 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+
+body{
+    background:var(--bg);
+    min-height:100vh;
+}
+
+.layout{
+    display:flex;
+    min-height:100vh;
+}
+
+/*====================================================
+                SIDEBAR
+====================================================*/
+
+.sidebar{
+
+    width:270px;
+    display:flex;
+    flex-direction:column;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    height:100vh;
+    background:linear-gradient(180deg,#1E1B4B,#312E81);
+
+    color:white;
+
+    box-shadow:5px 0 18px rgba(0,0,0,.12);
+}
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    padding:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    font-size:25px;
+    font-weight:700;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo i{
+
+    font-size:35px;
+
+    color:#C4B5FD;
+}
+/* ==========================================
+   MENU
+========================================== */
+
+.menu{
+
+    list-style:none;
+
+    margin-top:30px;
+
+}
+
+.menu li{
+
+    margin:8px 18px;
+
+}
+
+.menu li a{
+
+    text-decoration:none;
+
+    color:#CBD5E1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+.menu li a i{
+
+    font-size:20px;
+
+    width:25px;
+
+    text-align:center;
+
+}
+
+/* Hover */
+
+.menu li a:hover{
+
+    background:rgba(225,225,225,.08);
+
+    color:#fff;
+
+    transform:translateX(5px);
+
+}
+
+/* Active Menu */
+
+.menu li.active a{
+
+    background:linear-gradient(135deg,#6D28D9,#A855F7);
+
+    color:#fff;
+
+    box-shadow:0 8px 18px rgba(109,40,217,.35);
+
+}
+
+/* Logout */
+
+#logoutBtn{
+
+    margin-top:auto;
+    margin-bottom:25px;
+
+}
+
+/* ==========================================
+   MAIN
+========================================== */
+
+.main{
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar{
+
+    height:85px;
+
+    background:linear-gradient(180deg,#1E1B4B,#312E81);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0px 35px;
+
+    color:#fff;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
+    
+    margin-left: 0px;
+}
+
+/* Dashboard Title */
+
+.topbar h2{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.topbar h2 i{
+
+    font-size:30px;
+
+}
+/* ==========================================
+   PROFILE
+========================================== */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+cursor: pointer;
+    transition: 0.3s ease;
+   position: relative;
+}
+.profile:hover{
+    transform: scale(1.05);
+}
+
+.profile i{
+
+    font-size:45px;
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.profile-info .welcome{
+
+    font-size:13px;
+
+    opacity:.85;
+
+}
+
+.profile-info #studentName{
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+
+/* =========================
+CARD
+========================= */
+
+.students-card{
+    background:#fff;
+    margin:30px;
+    border-radius:20px;
+    padding:30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.04);
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+}
+
+.card-header h2{
+    font-size:20px;
+    color:var(--text);
+    margin-bottom:8px;
+}
+
+.card-header p{
+    color:var(--text-light);
+}
+
+#addStudentBtn{
+    background:linear-gradient(
+        90deg,
+        #5b34f0,
+        #4127db
+    );
+    color:#fff;
+    border:none;
+    padding:14px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+/* =========================
+TABLE
+========================= */
+
+.table-wrapper{
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#fafbff;
+}
+
+thead th{
+    padding:20px;
+    text-align:left;
+    font-size:14px;
+    font-weight:700;
+    color:#374151;
+}
+
+tbody tr{
+    border-top:1px solid #eef1f7;
+}
+
+tbody td{
+    padding:22px 18px;
+    vertical-align:middle;
+}
+
+/* =========================
+STUDENT INFO
+========================= */
+
+.student-info{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.student-avatar{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+}
+
+.avatar-purple{
+    background:#ede7ff;
+    color:#6d28d9;
+}
+
+.avatar-green{
+    background:#e5f8ed;
+    color:#15803d;
+}
+
+.avatar-orange{
+    background:#fff2db;
+    color:#d97706;
+}
+
+.avatar-blue{
+    background:#e4f0ff;
+    color:#2563eb;
+}
+
+.avatar-red{
+    background:#ffe5e5;
+    color:#dc2626;
+}
+
+.student-name{
+    font-weight:700;
+    color:#111827;
+    margin-bottom:5px;
+}
+
+.student-email{
+    color:#6b7280;
+    font-size:14px;
+}
+
+/* =========================
+BADGES
+========================= */
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.paid{
+    background:#dff7e8;
+    color:#15803d;
+}
+
+.pending{
+    background:#fff0d7;
+    color:#d97706;
+}
+
+.cleared{
+    background:#dff7e8;
+    color:#15803d;
+}
+
+.review{
+    background:#dbeafe;
+    color:#2563eb;
+}
+
+/* =========================
+ACTION BUTTONS
+========================= */
+
+.actions{
+    display:flex;
+    gap:10px;
+}
+
+.action-btn{
+    width:40px;
+    height:40px;
+    border-radius:8px;
+    background:#fff;
+    cursor:pointer;
+    transition:.3s;
+    border: none;
+}
+
+.view-btn{
+    border:2px solid #8b5cf6;
+    color:#8b5cf6;
+}
+
+.delete-btn{
+    border:2px solid #ef4444;
+    color:#ef4444;
+}
+
+.action-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.table-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:20px;
+}
+
+.table-footer p{
+    color:#374151;
+    font-weight:500;
+}
+
+/* =========================
+PAGINATION
+========================= */
+
+.pagination{
+    display:flex;
+    gap:10px;
+}
+
+.pagination button{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    border:1px solid #e5e7eb;
+    background:#fff;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.pagination .active-page{
+    background:#4f46e5;
+    color:#fff;
+    border:none;
+}
+
+/* ================================
+   STUDENT DETAILS POPUP
+================================ */
+
+.student-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+/* Popup box */
+.student-modal-content {
+    width: 100%;
+    max-width: 500px;
+
+    background: #ffffff;
+    border-radius: 16px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+    overflow: auto;
+
+    animation: popupAnimation 0.25s ease;
+}
+
+/* Animation */
+@keyframes popupAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Header */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 25px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.modal-header h2 {
+    margin: 0;
+
+    font-size: 20px;
+    color: #222;
+}
+
+/* X button */
+.close-modal {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 28px;
+    color: #777;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+}
+
+.close-modal:hover {
+    background: #f1f1f1;
+    color: #222;
+}
+
+/* Details */
+.student-details {
+    padding: 10px 25px 20px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.detail-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #777;
+}
+
+.detail-item span:last-child {
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+}
+
+/* Footer */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    padding: 15px 25px;
+
+    background: #f8f9fa;
+}
+
+/* OK button */
+.modal-ok-btn {
+    padding: 10px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #4f73df;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.modal-ok-btn:hover {
+    background: #3d5fc5;
+}
+/* Popup Background */
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+
+    display:none;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: 9999;
+}
+
+/* Show popup */
+.popup-overlay.active {
+    display: flex;
+}
+
+/* Popup box */
+.student-popup {
+    width: 520px;
+    max-width: 90%;
+
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+
+    position: relative;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    animation: popupAnimation 0.25s ease;
+}
+
+@keyframes popupAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Close button */
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    background: transparent;
+
+    font-size: 28px;
+    color: #777;
+
+    cursor: pointer;
+}
+
+.close-popup:hover {
+    color: #111;
+}
+
+/* Heading */
+.student-popup h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #172554;
+}
+
+.popup-subtitle {
+    margin: 7px 0 25px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Form */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d5d9e2;
+    border-radius: 8px;
+
+    outline: none;
+    font-size: 14px;
+
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #173db8;
+    box-shadow: 0 0 0 3px rgba(23, 61, 184, 0.1);
+}
+
+/* Two columns */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Buttons */
+.popup-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    margin-top: 10px;
+}
+
+.cancel-btn,
+.save-student-btn {
+    padding: 11px 22px;
+
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #f1f3f6;
+    color: #444;
+    border: none;
+}
+
+.cancel-btn:hover {
+    background: #e4e7ec;
+}
+
+.save-student-btn {
+    background: #173db8;
+    color: white;
+    border: none;
+}
+
+.save-student-btn:hover {
+    background: #102f96;
+}
+
+/* Success Popup Overlay */
+.success-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10000;
+}
+
+.success-overlay.active {
+    display: flex;
+}
+
+/* Success Popup */
+.success-popup {
+    width: 380px;
+    max-width: 90%;
+
+    background: #ffffff;
+    border-radius: 16px;
+
+    padding: 30px;
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    animation: successPopupAnimation 0.25s ease;
+}
+
+@keyframes successPopupAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Check icon */
+.success-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #e8f7ee;
+    color: #16a34a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.success-popup h2 {
+    margin: 0 0 8px;
+
+    color: #172554;
+    font-size: 23px;
+}
+
+.success-popup p {
+    margin: 0 0 22px;
+
+    color: #666;
+    font-size: 14px;
+}
+
+.success-popup button {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #173db8;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.success-popup button:hover {
+    background: #102f96;
+}
+/* Delete Popup Overlay */
+.delete-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10000;
+}
+
+.delete-overlay.active {
+    display: flex;
+}
+
+/* Delete Popup */
+.delete-popup {
+    width: 380px;
+    max-width: 90%;
+
+    background: #fff;
+    border-radius: 16px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    animation: deletePopupAnimation 0.25s ease;
+}
+
+@keyframes deletePopupAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Warning icon */
+.delete-icon {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #fdecec;
+    color: #dc2626;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.delete-popup h2 {
+    margin: 0 0 10px;
+
+    color: #172554;
+    font-size: 22px;
+}
+
+.delete-popup p {
+    margin: 0 0 25px;
+
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Buttons */
+.delete-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.delete-actions button {
+    flex: 1;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#cancelDelete {
+    border: none;
+    background: #f1f3f6;
+    color: #444;
+}
+
+#cancelDelete:hover {
+    background: #e4e7ec;
+}
+
+#confirmDeleteBtn {
+    border: none;
+    background: #dc2626;
+    color: white;
+}
+
+#confirmDeleteBtn:hover {
+    background: #b91c1c;
+}
+/*====================================================*
+    RESPONSIVE MEDIA QUERIES
+*====================================================*/
+
+@media (max-width: 1200px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .right-sidebar {
+        width: 100%;
+    }
+
+    .generator-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .notification-info h4 {
+        font-size: 20px;
+    }
+
+    .notification-info p {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 15px;
+    }
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 992px
+   Compact top bar
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+/* ---------------------------------------------
+       TOP BAR
+       Keep the existing top-bar content,
+       but hide Welcome and student's name.
+       --------------------------------------------- */
+
+ .profile-header {
+width: 100%;
+max-width: 100%;
+ margin: 0;
+ left: 0;
+ right: 0;
+box-sizing: border-box;
+ }
+
+ .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }
+
+/* Hide student's name / heading */
+ .profile-info {
+display: none;
+}
+
+.profile i {
+ font-size: 35px;
+ display: block;
+ margin: 0;
+    cursor: pointer;
+}
+.mobile-menu-button{
+    display: none;
+}
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 768px
+   Mobile layout
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------------------------------------------
+       PREVENT HORIZONTAL PAGE SCROLLING
+       --------------------------------------------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    /* ---------------------------------------------
+       MAIN CONTENT
+       Uses the FULL screen.
+       It does NOT move when sidebar opens.
+       --------------------------------------------- */
+
+    .main {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin-left: 0;
+        left: 0;
+
+        transition: none;
+        overflow-y: visible;
+        
+    }
+
+
+    /* ---------------------------------------------
+       TOP BAR
+       --------------------------------------------- */
+
+    .topbar {
+        min-height: 70px;
+        height: auto;
+
+        padding: 10px 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 10px;
+    }
+
+
+    /* Hide Welcome */
+    .topbar p {
+        display: none;
+    }
+
+
+    /* ONLY profile icon remains */
+    .profile {
+        display: flex;
+
+        width: auto;
+
+        width: auto;
+
+        margin-left: auto;
+
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+
+    .profile i {
+        font-size: 35px;
+        display: block;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .profile-info{
+        display: none;
+    }
+
+    .welcome,
+    #adminName {
+        display: none;
+    }
+    /* ---------------------------------------------
+       SIDEBAR
+       Hidden outside the screen
+       --------------------------------------------- */
+
+    .sidebar {
+        position: fixed;
+
+        flex-shrink: 0;
+        top: 0;
+        left: 0;
+
+        width: 250px;
+        height: 100vh;
+
+        z-index: 9999;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    /* Sidebar appears OVER main content */
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+
+    /* ---------------------------------------------
+       DARK OVERLAY
+       --------------------------------------------- */
+
+    .sidebar-overlay {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        z-index: 9998;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* ---------------------------------------------
+       MOBILE MENU BUTTON
+       Created automatically by JavaScript
+       --------------------------------------------- */
+
+    .mobile-menu-button {
+        position: static;
+        flex-shrink: 0;
+
+        top: 12px;
+        left: 12px;
+
+        width: 44px;
+        height: 44px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #ffffff;
+
+        font-size: 23px;
+
+        cursor: pointer;
+
+        z-index: 10000;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* ---------------------------------------------
+       SIDEBAR CLOSE BUTTON
+       --------------------------------------------- */
+
+    .mobile-sidebar-close {
+        position: absolute;
+
+        top: 15px;
+        right: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.15);
+
+        color: white;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+
+    /* ---------------------------------------------
+       CONTENT
+       --------------------------------------------- */
+
+    .content,
+    .dashboard-content,
+    .page-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        
+
+    }
+
+    .dashboard-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        gap: 20px;
+        overflow: visible;
+    }
+    .table-wrapper{
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    .right-panel{
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+    /* ---------------------------------------------
+       CARDS / CONTAINERS
+       --------------------------------------------- */
+
+    .card,
+    .container,
+    .dashboard-cards,
+    .dashboard-card {
+        max-width: 100%;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+    
+
+    }
+    .dashboard-cards{
+        grid-template-columns: 1fr;
+    }
+
+    .notice-card{
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 20px;
+        overflow: hidden;
+    }
+    .notification-content p{
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    .notification-card{
+        width: 92%;
+        max-width: 450px;
+        min-width: 0;
+        padding: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    /* ---------------------------------------------
+       TABLES
+       --------------------------------------------- */
+    .table-container {
+        width: 100%;
+        border-collapse: collapse;
+        box-sizing: border-box;
+        overflow-x: auto;
+        
+    }
+    .table-wrapper th,
+    .table-wrapper td {
+        box-sizing: border-box;
+        white-space: normal;
+        word-break: normal;
+    }
+
+    .table-card{
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .table-header div:nth-child(2),
+    .table-header div:nth-child(3),
+    .notification-row .date,
+    .notification-row div:has(.badge) {
+        display: none;
+    }
+}
+
+    /* ---------------------------------------------
+       IMAGES
+       --------------------------------------------- */
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* ---------------------------------------------
+       FORM ELEMENTS
+       --------------------------------------------- */
+
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .profile-header {
+        min-height: 65px;
+        padding: 8px 12px;
+    }
+
+
+    .profile-header .profile-icon {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+    }
+
+
+    .profile-header .profile-icon i {
+        font-size: 22px;
+    }
+
+
+    .sidebar {
+        width: 235px;
+    }
+
+
+    .mobile-menu-button {
+        width: 42px;
+        height: 42px;
+
+        top: 11px;
+        left: 11px;
+
+        font-size: 21px;
+    }
+}
+@media (max-width: 992px) {
+    .topbar h2 .fa-users{
+        display: none;
+    }
+}
+@media (min-width: 993px) {
+    .mobile-menu-button{
+        display: none;
+    }
+}

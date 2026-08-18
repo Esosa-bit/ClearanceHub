@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity Log - ClearanceHub</title>
+
+    <link rel="stylesheet" href="activity-log.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1><i class="fas fa-clock"></i> Activity Log</h1>
+        <p>View all report-related activities.</p>
+    </div>
+
+    <div class="activity-card">
+
+        <table class="activity-table">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+
+            <tbody id="activityTableBody">
+                <!-- JS Loads Activities Here -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="button-wrapper">
+        <button id="backBtn" class="back-btn">
+            <i class="fas fa-arrow-left"></i>
+            Back To Reports
+        </button>
+    </div>
+
+</div>
+
+<script src="activity-log.js"></script>
+
+</body>
+</html>

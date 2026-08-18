@@ -1,0 +1,355 @@
+/*====================================================
+                LOGOUT POPUP OVERLAY
+====================================================*/
+
+.logout-overlay{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(15,23,42,.45);
+
+    backdrop-filter:blur(6px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    visibility:hidden;
+    opacity:0;
+
+    transition:.35s ease;
+
+    z-index:9999;
+
+}
+
+.logout-overlay.show{
+
+    visibility:visible;
+    opacity:1;
+
+}
+
+
+/*====================================================
+                POPUP CONTAINER
+====================================================*/
+
+.logout-popup{
+
+    width:430px;
+    max-width:92%;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:40px 35px;
+
+    text-align:center;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.18);
+
+    transform:translateY(35px) scale(.95);
+
+    transition:.35s ease;
+
+}
+
+.logout-overlay.show .logout-popup{
+
+    transform:translateY(0) scale(1);
+
+}
+
+
+/*====================================================
+                LOGOUT ICON
+====================================================*/
+
+.logout-icon{
+
+    width:100px;
+    height:100px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        rgba(37,99,235,.12),
+        rgba(124,58,237,.12)
+    );
+
+}
+
+.logout-icon i{
+
+    font-size:48px;
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+    background-clip:text ;
+    -webkit-background-clip:text;
+    color: transparent;
+    -webkit-text-fill-color:transparent;
+
+}
+
+
+/*====================================================
+                    TITLE
+====================================================*/
+
+.logout-popup h2{
+
+    font-size:38px;
+
+    color:#1E293B;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+}
+
+
+/*====================================================
+                DESCRIPTION
+====================================================*/
+
+.logout-popup p{
+
+    color:#64748B;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    margin-bottom:35px;
+
+}
+
+
+/*====================================================
+                BUTTON AREA
+====================================================*/
+
+.logout-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+/*====================================================
+            YES LOGOUT BUTTON
+====================================================*/
+
+.confirm-logout{
+
+    height:52px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        #2563EB,
+        #7C3AED
+    );
+
+    transition:.3s;
+
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+
+}
+
+.confirm-logout:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 16px 28px rgba(37,99,235,.35);
+
+}
+
+
+/*====================================================
+                CANCEL BUTTON
+====================================================*/
+
+.cancel-logout{
+
+    height:52px;
+
+    background:#fff;
+
+    color:#2563EB;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    border:2px solid #2563EB;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.cancel-logout:hover{
+
+    background:#EFF6FF;
+
+    border-color:#7C3AED;
+
+    color:#7C3AED;
+
+}
+
+
+/*====================================================
+                SECURITY NOTE
+====================================================*/
+
+.logout-note{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    color:#64748B;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+.logout-note i{
+
+    margin-top:2px;
+
+    color:#2563EB;
+
+}
+
+
+/*====================================================
+                ANIMATION
+====================================================*/
+
+@keyframes logoutFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes logoutScale{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px) scale(.92);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+.logout-overlay.show{
+
+    animation:logoutFade .3s ease;
+
+}
+
+.logout-overlay.show .logout-popup{
+
+    animation:logoutScale .35s ease;
+
+}
+
+
+/*====================================================
+                MOBILE
+====================================================*/
+
+@media(max-width:768px){
+
+.logout-popup{
+
+    width:94%;
+
+    padding:30px 25px;
+
+}
+
+.logout-popup h2{
+
+    font-size:30px;
+
+}
+
+.logout-icon{
+
+    width:85px;
+    height:85px;
+
+}
+
+.logout-icon i{
+
+    font-size:40px;
+
+}
+
+}

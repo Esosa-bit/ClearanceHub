@@ -1,0 +1,1119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#ece9f3;
+}
+
+/* ==========================================
+   DASHBOARD LAYOUT
+========================================== */
+
+.dashboard{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar{
+    width:270px;
+    display:flex;
+    flex-direction:column;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    height:100vh;
+
+    background:linear-gradient(180deg,#1E1B4B,#312E81);
+
+    color:white;
+
+    box-shadow:5px 0 18px rgba(0,0,0,.12);
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+    padding:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    font-size:25px;
+    font-weight:700;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo i{
+    font-size:35px;
+    color:#C4B5FD;
+}
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu{
+    list-style:none;
+    margin-top:30px;
+}
+
+.menu li{
+    margin:8px 18px;
+}
+
+.menu li a{
+    text-decoration:none;
+    color:#CBD5E1;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    transition:.3s;
+    font-size:16px;
+}
+
+.menu li a i{
+    font-size:20px;
+    width:25px;
+    text-align:center;
+}
+
+/* Hover */
+
+.menu li a:hover{
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    transform:translateX(5px);
+}
+
+/* Active */
+
+.menu li.active a{
+    background:linear-gradient(135deg,#6D28D9,#A855F7);
+    color:#fff;
+    box-shadow:0 8px 18px rgba(109,40,217,.35);
+}
+
+/* Logout */
+
+#logoutBtn{
+    margin-top:auto;
+    margin-bottom:25px;
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content{
+    margin-left:270px;
+    width:calc(100% - 270px);
+
+    display:flex;
+    flex-direction:column;
+}
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.top-header{
+    height:85px;
+
+    background:linear-gradient(180deg,#1E1B4B,#312E81);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 35px;
+
+    color:white;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
+}
+
+.page-title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.page-title i{
+    font-size:30px;
+}
+
+.page-title h1{
+    font-size:28px;
+    font-weight:600;
+}
+
+/* ==========================================
+   PROFILE
+========================================== */
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.profile:hover{
+    transform:scale(1.05);
+}
+
+.profile i{
+    font-size:45px;
+}
+
+.profile-info{
+    display:flex;
+    flex-direction:column;
+}
+
+.profile-info .welcome{
+    font-size:13px;
+    opacity:.85;
+}
+
+.profile-info #adminName{
+    font-size:17px;
+    font-weight:600;
+}
+
+/* ==========================================
+   NOTIFICATION CARD
+========================================== */
+
+.notification-card{
+    background:white;
+
+    margin:35px;
+    padding:40px;
+
+    border-radius:28px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+/* ==========================================
+   CARD HEADER
+========================================== */
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.card-header h2{
+    font-size:30px;
+    color:#171444;
+}
+
+.card-header p{
+    margin-top:10px;
+    color:#6f7488;
+}
+
+#markAllBtn{
+    padding:16px 28px;
+
+    border:2px solid #7d3cff;
+
+    background:white;
+    color:#7d3cff;
+
+    border-radius:15px;
+
+    font-weight:600;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#markAllBtn:hover{
+    background:#7d3cff;
+    color:white;
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.table-container{
+    border:1px solid #ececec;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.table-header{
+    display:grid;
+    grid-template-columns:2.5fr 1fr .8fr 1fr;
+
+    background:#fafafa;
+
+    padding:20px;
+
+    font-weight:600;
+}
+
+.notification-row{
+    display:grid;
+    grid-template-columns:2.5fr 1fr .8fr 1fr;
+
+    padding:28px 20px;
+
+    align-items:center;
+
+    border-top:1px solid #ededed;
+}
+/* ==========================================
+   NOTIFICATION INFO
+========================================== */
+
+.notification-info{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/* ==========================================
+   ICONS
+========================================== */
+
+.icon{
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+}
+
+.purple{
+    background:#f1e8ff;
+    color:#7d3cff;
+}
+
+.green{
+    background:#def8e6;
+    color:#22a85b;
+}
+
+.orange{
+    background:#fff1dc;
+    color:#d78207;
+}
+
+.blue{
+    background:#e7efff;
+    color:#3f67ff;
+}
+
+.red{
+    background:#ffe5ea;
+    color:#ef425f;
+}
+
+/* ==========================================
+   NOTIFICATION TEXT
+========================================== */
+
+.notification-info h4{
+    font-size:16px;
+    margin-bottom:8px;
+    color:#1d1b48;
+}
+
+.notification-info p{
+    font-size:14px;
+    color:#697084;
+    line-height:1.5;
+}
+
+/* ==========================================
+   DATE
+========================================== */
+
+.date{
+    font-size:18px;
+    color:#596175;
+    line-height:1.8;
+}
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+.badge{
+    display:inline-block;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    font-weight:600;
+    font-size:15px;
+}
+
+.new{
+    background:#f3ebff;
+    color:#7d3cff;
+}
+
+.success{
+    background:#dff8e7;
+    color:#17a34a;
+}
+
+.pending{
+    background:#fff0d6;
+    color:#c97d00;
+}
+
+.rejected{
+    background:#ffe0e6;
+    color:#e73d5d;
+}
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+.action-buttons{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* View Button */
+
+.view-btn{
+    background:white;
+
+    width:38px;
+
+    height:38px;
+   
+    color:#7d3cff;
+
+    padding:0px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    border: 2px solid #3e61a1;
+}
+
+.view-btn:hover{
+    transform: translateY(-2px);
+     transition:.3s;
+}
+
+/* Delete Button */
+
+.hidden{
+    display:none;
+}
+
+.delete-btn{
+    color:#ef4444;
+    background:white;
+
+    padding:0px;
+
+    border-radius:8px;
+
+   height: 38px;
+
+   width: 38px;
+
+    cursor:pointer;
+
+    border: 2px solid #ef425f;
+}
+
+.delete-btn:hover{
+    transform: translateY(-2px);
+    transition:.3s;
+}
+
+/* ==========================================
+   ROW HOVER
+========================================== */
+
+.notification-row{
+    transition:.3s;
+}
+
+.notification-row:hover{
+    background:#faf8ff;
+}
+
+/* ==========================================
+   CARD FOOTER
+========================================== */
+
+.card-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:25px 10px 0;
+
+    color:#6d7386;
+    font-size:17px;
+}
+
+.card-footer i{
+    margin-right:8px;
+    color:#7d3cff;
+}
+.modal {
+    /* Add your base modal display and background overlay styles here */
+    display: none; 
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    margin: 15% auto;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #697084;
+}
+
+.modal-header-icon i {
+    font-size: 32px;
+    color: #ef425f;
+    margin-bottom: 10px;
+}
+
+.modal-content h3 {
+    margin: 0 0 10px 0;
+}
+
+.modal-content p {
+    color: #697084;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-cancel {
+    padding: 8px 20px;
+    background: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-confirm-delete {
+    padding: 8px 20px;
+    background: #ef425f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/*====================================================*
+    RESPONSIVE MEDIA QUERIES
+*====================================================*/
+
+@media (max-width: 1200px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .right-sidebar {
+        width: 100%;
+    }
+
+    .generator-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .notification-info h4 {
+        font-size: 20px;
+    }
+
+    .notification-info p {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 15px;
+    }
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 992px
+   Compact top bar
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+/* ---------------------------------------------
+       TOP BAR
+       Keep the existing top-bar content,
+       but hide Welcome and student's name.
+       --------------------------------------------- */
+
+ .profile-header {
+width: 100%;
+max-width: 100%;
+ margin: 0;
+ left: 0;
+ right: 0;
+box-sizing: border-box;
+ }
+
+ .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }
+
+/* Hide student's name / heading */
+ .profile-info {
+display: none;
+}
+
+.profile i {
+ font-size: 35px;
+ display: block;
+ margin: 0;
+    cursor: pointer;
+}
+.mobile-menu-button{
+    display: none;
+}
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 768px
+   Mobile layout
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------------------------------------------
+       PREVENT HORIZONTAL PAGE SCROLLING
+       --------------------------------------------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    /* ---------------------------------------------
+       MAIN CONTENT
+       Uses the FULL screen.
+       It does NOT move when sidebar opens.
+       --------------------------------------------- */
+
+    .main-content {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin-left: 0;
+        left: 0;
+
+        transition: none;
+        overflow-y: visible;
+        
+    }
+
+
+    /* ---------------------------------------------
+       TOP BAR
+       --------------------------------------------- */
+
+    .top-header {
+        min-height: 70px;
+        height: auto;
+
+        padding: 10px 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 10px;
+    }
+
+
+    /* Hide Welcome */
+    .top-header p {
+        display: none;
+    }
+
+
+    /* ONLY profile icon remains */
+    .profile {
+        display: flex;
+
+        width: auto;
+
+        width: auto;
+
+        margin-left: auto;
+
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+
+    .profile i {
+        font-size: 35px;
+        display: block;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .profile-info{
+        display: none;
+    }
+
+    .welcome,
+    #adminName {
+        display: none;
+    }
+    /* ---------------------------------------------
+       SIDEBAR
+       Hidden outside the screen
+       --------------------------------------------- */
+
+    .sidebar {
+        position: fixed;
+
+        flex-shrink: 0;
+        top: 0;
+        left: 0;
+
+        width: 250px;
+        height: 100vh;
+
+        z-index: 9999;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    /* Sidebar appears OVER main content */
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+
+    /* ---------------------------------------------
+       DARK OVERLAY
+       --------------------------------------------- */
+
+    .sidebar-overlay {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        z-index: 9998;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* ---------------------------------------------
+       MOBILE MENU BUTTON
+       Created automatically by JavaScript
+       --------------------------------------------- */
+
+    .mobile-menu-button {
+        position: static;
+        flex-shrink: 0;
+
+        top: 12px;
+        left: 12px;
+
+        width: 44px;
+        height: 44px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #ffffff;
+
+        font-size: 23px;
+
+        cursor: pointer;
+
+        z-index: 10000;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* ---------------------------------------------
+       SIDEBAR CLOSE BUTTON
+       --------------------------------------------- */
+
+    .mobile-sidebar-close {
+        position: absolute;
+
+        top: 15px;
+        right: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.15);
+
+        color: white;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+
+    /* ---------------------------------------------
+       CONTENT
+       --------------------------------------------- */
+
+    .content,
+    .dashboard-content,
+    .page-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    
+
+    }
+
+    .dashboard-content{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        gap: 20px;
+        overflow: visible;
+    }
+    .table-wrapper{
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+    .right-panel{
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+    /* ---------------------------------------------
+       CARDS / CONTAINERS
+       --------------------------------------------- */
+
+    .card,
+    .container,
+    .dashboard-cards,
+    .dashboard-card {
+        max-width: 100%;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+
+    }
+    .dashboard-cards{
+        grid-template-columns: 1fr;
+    }
+
+    .notice-card{
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        padding: 20px;
+        overflow: hidden;
+    }
+    .notification-content p{
+        width: 100%;
+        max-width: 100%;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+    }
+    .notification-card{
+        width: 92%;
+        max-width: 450px;
+        min-width: 0;
+        padding: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    /* ---------------------------------------------
+       TABLES
+       --------------------------------------------- */
+    .table-container {
+        width: 100%;
+        border-collapse: collapse;
+        box-sizing: border-box;
+        overflow-x: auto;
+        
+    }
+    .table-wrapper th,
+    .table-wrapper td {
+        box-sizing: border-box;
+        white-space: normal;
+        word-break: normal;
+    }
+
+    .table-card{
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .table-header div:nth-child(2),
+    .table-header div:nth-child(3),
+    .notification-row .date,
+    .notification-row div:has(.badge) {
+        display: none;
+    }
+}
+
+    /* =========================================
+   MARK ALL AS READ — MOBILE
+   ========================================= */
+
+#markAllBtn {
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#markAllBtn i {
+    font-size: 16px;
+    margin: 0;
+}
+    /* ---------------------------------------------
+       IMAGES
+       --------------------------------------------- */
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* ---------------------------------------------
+       FORM ELEMENTS
+       --------------------------------------------- */
+
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .profile-header {
+        min-height: 65px;
+        padding: 8px 12px;
+    }
+
+
+    .profile-header .profile-icon {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+    }
+
+
+    .profile-header .profile-icon i {
+        font-size: 22px;
+    }
+
+
+    .sidebar {
+        width: 235px;
+    }
+
+
+    .mobile-menu-button {
+        width: 42px;
+        height: 42px;
+
+        top: 11px;
+        left: 11px;
+
+        font-size: 21px;
+    }
+}
+@media (max-width: 992px) {
+    .top-header h1 .fa-bell{
+        display: none;
+    }
+}
+@media (min-width: 993px) {
+    .mobile-menu-button{
+        display: none;
+    }
+}

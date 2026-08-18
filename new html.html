@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearanceHub Portal</title>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/fbe7944c97.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="login page.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+
+            <h1>Clearance Hub</h1>
+
+            <p>
+                Streamline your clearance<br>
+                process with ease.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+
+        <div class="form-container">
+
+            <h2>Welcome Back</h2>
+
+            <p class="subtitle">
+                Please login to your account
+            </p>
+
+            <!-- ROLE SELECTOR -->
+            <div class="role-selector">
+
+                <button
+                    type="button"
+                    class="role-btn active"
+                    onclick="setRole('Student')">
+                    Student
+                </button>
+
+                <button
+                    type="button"
+                    class="role-btn"
+                    onclick="setRole('Administrator')">
+                    Administrator
+                </button>
+
+            </div>
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm">
+
+                <!-- EMAIL -->
+
+                <div class="input-container">
+
+                    <label for="email">Email</label>
+
+                    <div class="input-wrapper">
+                        <input
+                            type="email"
+                            id="email"
+                            class="input-field"
+                            placeholder="Enter your institutional email"
+                            required>
+                     <i class="fa-regular fa-user input-icon"></i>
+                    </div>
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="input-container">
+
+                    <label for="password">Password</label>
+
+                    <div class="input-wrapper">
+                        <input
+                            type="password"
+                            id="password"
+                            class="input-field"
+                            placeholder="Enter your password"
+                            required>
+
+                        <i
+                            class="fa-regular fa-eye password-toggle"
+                            id="togglePassword"
+                            onclick="togglePassword()">
+                        </i>
+
+                    </div>
+
+                </div>
+
+                <!-- ERROR MESSAGE -->
+
+               <!-- ==========================================
+        LOGIN ERROR POPUP
+========================================== -->
+
+<div class="popup-overlay" id="errorPopup">
+
+    <div class="popup-box">
+
+        <div class="popup-icon">
+            ✖
+        </div>
+
+        <h2>Login Failed</h2>
+
+        <p id="popupMessage">
+            Incorrect email, password, or selected role.
+            Please try again.
+        </p>
+
+        <button type="button" id="popupOkBtn">
+            OK
+        </button>
+
+    </div>
+
+</div>
+<!-- ==========================================
+        FORGOT PASSWORD POPUP
+========================================== -->
+
+<div class="popup-overlay" id="forgotPopup">
+
+    <div class="popup-box">
+
+        <div class="popup-icon">
+            🔒
+        </div>
+
+        <h2>Password Recovery</h2>
+
+        <p id="popupMessage">
+            Please contact the Administrator to recover or reset your password.
+        </p>
+
+        <button type="button" id="forgotPopupOk">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="action-container">
+
+                    <a
+                        href="#"
+                        class="forgot-pass"
+                        id="forgotPasswordLink">
+                        Forgot Password?
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="signin-btn">
+                        Sign In
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="jscript.js"></script>
+
+</body>
+</html>

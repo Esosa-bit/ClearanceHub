@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile | Clearance Hub</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="Sprofile.css">
+    <link rel="stylesheet" href="logout.css">
+</head>
+<body>
+
+<div class="My Profile">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Clearance Hub</span>
+        </div>
+       <ul class="menu">
+
+            <li>
+
+                <a href="Sdashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="Sprofile.html">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    <span>My Profile</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="facultydues.html">
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                    <span>Faculty Dues</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="clearancerequests.html">
+
+                    <i class="fa-regular fa-file-lines"></i>
+
+                    <span>Clearance Requests</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="notifications.html">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span>Notifications</span>
+
+                </a>
+
+            </li>
+
+            <li class="logout">
+
+                 <a href="#"
+                id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <h2>
+                <i class="fa-solid fa-user-graduate"></i>
+                Student Profile
+            </h2>
+
+            <div class="profile">
+
+                <i class="fa-solid fa-circle-user"></i>
+
+                <div class="profile-info">
+                    <span class="welcome">Welcome</span>
+                    <span id="studentName">Student</span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Student Information Card -->
+
+        <section class="card">
+
+            <h2>Student Information Form</h2>
+
+            <p class="subtitle">
+                Please fill in your details accurately.
+            </p>
+
+            <form id="studentForm">
+
+                <div class="form-grid">
+
+                    <!-- Full Name -->
+
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required>
+                    </div>
+
+                    <!-- Matric Number -->
+
+                    <div class="input-group">
+                        <label for="matricNumber">Matric Number</label>
+
+                        <input
+                            type="text"
+                            id="matricNumber"
+                            placeholder="Enter your matric number"
+                            required>
+                    </div>
+
+                    <!-- Department -->
+
+                    <div class="input-group">
+                        <label for="department">Department</label>
+
+                        <select id="department" required>
+
+                            <option value="">Select your department</option>
+
+                            <option>Computer Science</option>
+                            <option>Software Engineering</option>
+                            <option>Cyber Security</option>
+                            <option>Information Systems</option>
+                            <option>Information Technology</option>
+
+                        </select>
+                    </div>
+
+                    <!-- Graduation Year -->
+
+                    <div class="input-group">
+                        <label for="graduationYear">
+                            Expected Graduation Year
+                        </label>
+
+                        <select id="graduationYear" required>
+
+                            <option value="">Select expected graduation year</option>
+
+                            <option>2026</option>
+                            <option>2027</option>
+                            <option>2028</option>
+                            <option>2029</option>
+
+                        </select>
+                    </div>
+
+                    <!-- Year of Entry -->
+
+                    <div class="input-group">
+                        <label for="entryYear">Year of Entry</label>
+
+                        <select id="entryYear" required>
+
+                            <option value="">Select year of entry</option>
+
+                            <option>2022</option>
+                            <option>2023</option>
+                            <option>2024</option>
+                            <option>2025</option>
+
+                        </select>
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email address"
+                            required>
+                    </div>
+
+                </div>
+
+                <div class="button-area">
+
+                    <button type="submit" class="save-btn">
+
+                        Save & Continue
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+<!-- =========================
+     Success Popup
+========================= -->
+<div id="successPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <div class="popup-check">
+            ✓
+        </div>
+
+        <h2>Success!</h2>
+
+        <p>
+            Student information saved successfully.
+        </p>
+
+        <button id="popupOkBtn">
+            OK
+        </button>
+
+    </div>
+
+</div>
+<!-- ==========================================
+        LOGOUT POPUP
+========================================== -->
+
+<div class="logout-overlay" id="logoutOverlay">
+
+    <div class="logout-popup">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Log Out</h2>
+
+        <p>
+            Are you sure you want to log out of your account?<br>
+            You will need to sign in again to access your account.
+        </p>
+
+        <div class="logout-buttons">
+
+            <button
+                class="confirm-logout"
+                id="confirmLogout">
+
+                Yes, Log Out
+
+            </button>
+
+            <button
+                class="cancel-logout"
+                id="cancelLogout">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+        <div class="logout-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                For your security, please log out when you are done accessing your account.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="Sprofile.js"></script>
+<script src="logout.js"></script>
+</body>
+</html>

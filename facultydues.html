@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Faculty Dues | ClearanceHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="facultydues.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="logout.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ======================
+            SIDEBAR
+    ======================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+                <span>Clearance Hub</span>
+            </div>
+
+        <ul class="menu">
+
+            <li>
+
+                <a href="Sdashboard.html">
+
+
+                        <i class="fa-solid fa-house"></i>
+
+                        <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="Sprofile.html">
+
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <span>My Profile</span>
+
+                    
+
+                </a>
+
+            </li>
+
+
+            <li class="active">
+
+                <a href="facultydues.html">
+
+                        <i class="fa-solid fa-money-bill-wave"></i>
+
+                        <span>Faculty Dues</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="clearancerequest.html">
+
+
+                        <i class="fa-regular fa-file-lines"></i>
+
+                        <span>Clearance Requests</span>
+
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="notifications.html">
+
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span>Notifications</span>
+
+                    </span>
+
+                </a>
+
+            </li>
+
+
+            <li class="logout">
+
+                <a href="#"
+                id="logoutBtn">
+
+                    <div class="menu-left">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        <span>Logout</span>
+
+                    </div>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- ======================
+            MAIN CONTENT
+    ======================= -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+       <header class="topbar">
+
+            <h2>
+
+                <i class="fa-solid fa-money-bill-wave"></i>
+
+                Faculty Dues
+
+            </h2>
+
+            <div class="profile"
+            onclick="goToProfile()">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+               <div class="profile-info">
+                    <span class="welcome">Welcome</span>
+                    <span id="studentName">Student</span>
+                </div>
+               </div>
+        </header>
+        
+        <!-- PAGE CONTENT -->
+
+        <section class="content">
+
+            <h2>Faculty Dues</h2>
+
+            <p class="subtitle">
+
+                Submit your payment details and upload your receipt.
+
+            </p>
+
+
+            <!-- INFORMATION BAR -->
+
+            <div class="info-box">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+
+                    Ensure the information you enter is accurate. This helps us verify your payment.
+
+                </span>
+
+            </div>
+
+
+
+            <div class="dues-grid">
+
+
+                <!-- ======================
+                        LEFT COLUMN
+                ======================= -->
+
+                <div class="payment-form">
+
+                    <h3>Upload Receipt & Payment Details</h3>
+
+                    <form id="paymentForm">
+
+
+                        <!-- Receipt Number -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Receipt Number <span>*</span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="receiptNumber"
+                                placeholder="Enter receipt number"
+                                required>
+
+                            <small>
+
+                                e.g. RCPT/2025/000123
+
+                            </small>
+
+                        </div>
+
+
+
+                        <!-- Category -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Payment Category <span>*</span>
+
+                            </label>
+
+                            <select id="paymentCategory" required>
+
+                                <option value="">
+
+                                    -- Select payment type --
+
+                                </option>
+
+                                <option>
+
+                                    Faculty Maintenance Fees
+
+                                </option>
+
+                                <option>
+
+                                    Laboratory Fees
+
+                                </option>
+
+                                <option>
+
+                                    Development Levy
+
+                                </option>
+
+                                <option>
+
+                                    Examination Fees
+
+                                </option>
+
+                                <option>
+
+                                    Other
+
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- Amount -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Amount Paid (₦) <span>*</span>
+
+                            </label>
+
+                            <input
+                                type="number"
+                                id="amount"
+                                placeholder="Enter amount paid"
+                                required>
+
+                            <small>
+
+                                e.g. 15000
+
+                            </small>
+
+                        </div>
+
+
+
+                        <!-- Upload -->
+
+                        <div class="input-group">
+
+                            <label>
+
+                                Upload Receipt <span>*</span>
+
+                            </label>
+
+                            <label
+                                class="upload-box"
+                                for="receiptFile">
+
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                                <h4>
+
+                                    Click to upload
+
+                                </h4>
+
+                                <p>
+
+                                    or drag and drop
+
+                                </p>
+
+                                <small>
+
+                                    JPG, PNG or PDF (Max. 5MB)
+
+                                </small>
+
+                            </label>
+
+                            <input
+                                type="file"
+                                id="receiptFile"
+                                accept=".jpg,.jpeg,.png,.pdf"
+                                hidden>
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="submit-btn">
+
+                            <i class="fa-solid fa-upload"></i>
+
+                            Submit Payment
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- ======================
+                        RIGHT COLUMN
+                ======================= -->
+
+                <div class="payment-records">
+
+                    <h3>Payment Records</h3>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Receipt No.</th>
+                                    <th>Payment Category</th>
+                                    <th>Amount (₦)</th>
+                                    <th>Date Submitted</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="paymentTableBody">
+
+                                <!-- Generated by JavaScript -->
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <!-- NOTES -->
+
+                    <div class="notes">
+
+                        <h3>
+
+                            <i class="fa-solid fa-circle-check"></i>
+
+                            Important Notes
+
+                        </h3>
+
+                        <ul>
+
+                            <li>
+
+                                Ensure all payments are made to the official faculty accounts.
+
+                            </li>
+
+                            <li>
+
+                                Upload clear and accurate receipt images.
+
+                            </li>
+
+                            <li>
+
+                                You will be notified once your payment is verified.
+
+                            </li>
+
+                            <li>
+
+                                Contact the Faculty Office if you experience any issues.
+
+                            </li>
+
+                        </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- ======================
+        TOAST MESSAGE
+======================= -->
+
+<div id="toast" class="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <div>
+
+        <h4>Success</h4>
+
+        <p>Your payment has been submitted successfully.</p>
+
+    </div>
+
+</div>
+
+<!-- PAYMENT POPUP -->
+
+<div id="paymentPopup" class="popup-overlay">
+
+    <div class="popup">
+
+        <span class="close-popup" onclick="closePopup()">&times;</span>
+
+        <h2>Payment Receipt Details</h2>
+
+        <p><strong>Receipt Number:</strong> <span id="popupReceiptNumber"></span></p>
+
+        <p><strong>Payment Category:</strong> <span id="popupPaymentCategory"></span></p>
+
+        <p><strong>Amount:</strong> <span id="popupAmount"></span></p>
+
+        <p><strong>Date Submitted:</strong> <span id="popupDate"></span></p>
+
+        <p><strong>Status:</strong> <span id="popupStatus"></span></p>
+
+        <p><strong>Receipt File:</strong> <span id="popupFileName"></span></p>
+
+    </div>
+
+</div>
+<!-- ==========================================
+        LOGOUT POPUP
+========================================== -->
+
+<div class="logout-overlay" id="logoutOverlay">
+
+    <div class="logout-popup">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Log Out</h2>
+
+        <p>
+            Are you sure you want to log out of your account?<br>
+            You will need to sign in again to access your account.
+        </p>
+
+        <div class="logout-buttons">
+
+            <button
+                class="confirm-logout"
+                id="confirmLogout">
+
+                Yes, Log Out
+
+            </button>
+
+            <button
+                class="cancel-logout"
+                id="cancelLogout">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+        <div class="logout-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                For your security, please log out when you are done accessing your account.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ======================
+        JAVASCRIPT
+======================= -->
+
+<script src="facultydues.js"></script>
+<script src="logout.js"></script>
+</body>
+
+</html>

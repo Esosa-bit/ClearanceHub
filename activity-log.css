@@ -1,0 +1,103 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#F5F7FB;
+    padding:40px;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.page-header{
+    margin-bottom:25px;
+}
+
+.page-header h1{
+    font-size:32px;
+    color:#111827;
+    margin-bottom:8px;
+}
+
+.page-header p{
+    color:#6B7280;
+}
+
+.activity-card{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.activity-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.activity-table th{
+    text-align:left;
+    background:#F9FAFB;
+    padding:16px;
+    font-weight:600;
+    color:#111827;
+    border-bottom:1px solid #E5E7EB;
+}
+
+.activity-table td{
+    padding:18px 16px;
+    border-bottom:1px solid #E5E7EB;
+}
+
+.activity{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.green{
+    background:#22C55E;
+}
+
+.blue{
+    background:#2563EB;
+}
+
+.purple{
+    background:#7C3AED;
+}
+
+.orange{
+    background:#F97316;
+}
+
+.red{
+    background:#EF4444;
+}
+
+.button-wrapper{
+    text-align:center;
+    margin-top:25px;
+}
+
+.back-btn{
+    padding:14px 24px;
+    border:none;
+    border-radius:12px;
+    background:#2563EB;
+    color:#fff;
+    font-size:15px;
+    cursor:pointer;
+}

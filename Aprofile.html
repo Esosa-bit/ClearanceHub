@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile | ClearanceHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Aprofile.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="logout.css">
+</head>
+
+<body>
+
+    <!--=============================
+            SIDEBAR
+    ==============================-->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Clearance Hub</span>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="admin-dashboard.html">
+                    <i class="fas fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="#">
+                    <i class="fa-regular fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-students.html">
+                    <i class="fas fa-users"></i>
+                    Manage Students
+                </a>
+            </li>
+
+            <li>
+                <a href="clearance-requests.html">
+                    <i class="fas fa-file-circle-check"></i>
+                    Clearance Requests
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    <i class="fas fa-chart-column"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="Anotifications.html">
+                    <i class="fa-regular fa-bell"></i>
+                    Notifications
+                </a>
+            </li>
+
+            <li class="logout">
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!--=============================
+            MAIN CONTENT
+    ==============================-->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <h2>
+
+                <i class="fas fa-id-card"></i>
+
+                Admin Profile
+
+            </h2>
+
+            <div class="profile"
+            onclick="goToProfile()">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+               <div class="profile-info">
+                    <span class="welcome">Welcome</span>
+                    <span id="adminName">Admin</span>
+                </div>
+               </div>
+        </header>
+
+        <!-- Form Card -->
+
+        <div class="profile-card">
+
+            <div class="card-header">
+
+                <h3>Admin Information Form</h3>
+
+                <p>Please fill in your administrative details.</p>
+
+            </div>
+
+            <form id="adminForm">
+
+                <div class="form-grid">
+
+                    <!-- Staff ID -->
+
+                    <div class="input-box">
+                        <label>Staff ID</label>
+
+                        <input
+                            type="text"
+                            id="staffID"
+                            placeholder="Enter Staff ID"
+                            required>
+                    </div>
+
+                    <!-- Full Name -->
+
+                    <div class="input-box">
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Enter your full name"
+                            required>
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="input-box">
+
+                        <label>Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Enter email address"
+                            required>
+
+                    </div>
+
+                    <!-- Phone -->
+
+                    <div class="input-box">
+
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required>
+
+                    </div>
+
+                <!-- Button -->
+
+                <div class="button-area">
+
+                    <button type="submit">
+
+                        Save & Continue
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+<!-- =========================
+     Success Popup
+========================= -->
+<div id="successPopup" class="popup-overlay">
+
+    <div class="popup-box">
+
+        <div class="popup-check">
+            ✓
+        </div>
+
+        <h2>Success!</h2>
+
+        <p>
+            Admin information saved successfully.
+        </p>
+
+        <button id="popupOkBtn">
+            OK
+        </button>
+
+    </div>
+
+</div>
+<!-- ==========================================
+        LOGOUT POPUP
+========================================== -->
+
+<div class="logout-overlay" id="logoutOverlay">
+
+    <div class="logout-popup">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Log Out</h2>
+
+        <p>
+            Are you sure you want to log out of your account?<br>
+            You will need to sign in again to access your account.
+        </p>
+
+        <div class="logout-buttons">
+
+            <button
+                class="confirm-logout"
+                id="confirmLogout">
+
+                Yes, Log Out
+
+            </button>
+
+            <button
+                class="cancel-logout"
+                id="cancelLogout">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+        <div class="logout-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                For your security, please log out when you are done accessing your account.
+            </span>
+
+        </div>
+
+    </div>
+    
+    <script src="logout.js"></script>
+    <script src="Aprofile.js"></script>
+
+</body>
+
+</html>

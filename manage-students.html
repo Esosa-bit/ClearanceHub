@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Students | ClearanceHub</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="manage-students.css">
+    <link rel="stylesheet" href="logout.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!--=============================
+            SIDEBAR
+    ==============================-->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Clearance Hub</span>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="admin-dashboard.html">
+                    <i class="fas fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="Aprofile.html">
+                    <i class="fa-regular fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="manage-students.html">
+                    <i class="fas fa-users"></i>
+                    Manage Students
+                </a>
+            </li>
+
+            <li>
+                <a href="clearance-requests.html">
+                    <i class="fas fa-file-circle-check"></i>
+                    Clearance Requests
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    <i class="fas fa-chart-column"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="Anotifications.html">
+                    <i class="fa-regular fa-bell"></i>
+                    Notifications
+                </a>
+            </li>
+            <li class="logout">
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+                <h2>
+                    <i class="fas fa-users"></i>
+                    Manage Students
+                </h2>
+
+            <div class="profile"
+            onclick="goToProfile()">
+
+                <i class="fa-solid fa-circle-user"></i>
+
+                <div class="profile-info">
+
+                    <span class="welcome">
+
+                        Welcome
+
+                    </span>
+
+                    <span id="adminName">
+
+                        Admin
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- STUDENTS CARD -->
+        <section class="students-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>All Students</h2>
+                    <p>Below is the list of all registered students in the system.</p>
+                </div>
+
+                <button id="addStudentBtn">
+                    <i class="fas fa-plus"></i>
+                    Add Student
+                </button>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Matric No.</th>
+                        <th>Department</th>
+                        <th>Level</th>
+                        <th>Dues Status</th>
+                        <th>Clearance Status</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="table-footer">
+
+                <p>
+                    Showing 1 to 7 of 50 students
+                </p>
+
+                <div class="pagination">
+
+                    <button>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+
+                    <button class="active-page">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+
+                    <button>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+<!-- ================= LOGOUT POPUP ================= -->
+
+    <div class="logout-overlay" id="logoutOverlay">
+
+        <div class="logout-popup">
+
+            <div class="logout-icon">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+            </div>
+
+            <h2>
+
+                Log Out
+
+            </h2>
+
+            <p>
+
+                Are you sure you want to log out of your ClearanceHub account?
+
+                <br><br>
+
+                You will need to sign in again to continue.
+
+            </p>
+
+            <div class="logout-buttons">
+
+                <button
+                    class="confirm-logout"
+                    id="confirmLogout">
+
+                    Yes, Log Out
+
+                </button>
+
+                <button
+                    class="cancel-logout"
+                    id="cancelLogout">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+            <div class="logout-note">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <span>
+
+                    For your security, always log out after using a shared computer.
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Student Details Popup -->
+<div id="studentModal" class="student-modal">
+    <div class="student-modal-content">
+
+        <div class="modal-header">
+            <h2>Student Details</h2>
+            <button class="close-modal" type="button">&times;</button>
+        </div>
+
+        <div class="student-details">
+
+            <div class="detail-item">
+                <span class="detail-label">Student Name</span>
+                <span id="modalStudentName"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Email</span>
+                <span id="modalStudentEmail"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Matric Number</span>
+                <span id="modalStudentMatric"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Department</span>
+                <span id="modalStudentDepartment"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Level</span>
+                <span id="modalStudentLevel"></span>
+            </div>
+
+        <div class="detail-item">
+                <span class="detail-label">Dues Status</span>
+                <span id="modalStudentDuesStatus"></span>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">Clearance Status</span>
+                <span id="modalStudentClearanceStatus"></span>
+            </div>
+
+        <div class="modal-footer">
+            <button class="modal-ok-btn" type="button">
+                OK
+            </button>
+        </div>
+</div>
+    </div>
+</div>
+
+<!-- Add Student Popup -->
+<div class="popup-overlay" id="studentPopup">
+    <div class="student-popup">
+
+        <button class="close-popup" id="closeStudentPopup">&times;</button>
+
+        <h2>Add New Student</h2>
+        <p class="popup-subtitle">Enter the student's information below.</p>
+
+        <form id="studentForm">
+
+            <div class="form-group">
+                <label for="studentName">Student Full Name</label>
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter student's full name"
+                    required
+                >
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="matricNo">Matric No.</label>
+                    <input
+                        type="text"
+                        id="matricNo"
+                        placeholder="e.g. 20/CSC/123456"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <input
+                        type="text"
+                        id="department"
+                        placeholder="e.g. Computer Science"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="form-row">
+
+                <div class="form-group">
+                    <label for="level">Level</label>
+                    <select id="level" required>
+                        <option value="">Select level</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                        <option value="300">300</option>
+                        <option value="400">400</option>
+                        <option value="500">500</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="student@example.com"
+                        required
+                    >
+                </div>
+
+            </div>
+
+                <button type="submit" class="save-student-btn">
+                    Add Student
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- Success Popup -->
+<div class="success-overlay" id="successPopup">
+    <div class="success-popup">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h2>Success!</h2>
+
+        <p id="successMessage">
+            Student added successfully!
+        </p>
+
+        <button id="successOkBtn">
+            OK
+        </button>
+
+    </div>
+</div>
+<div class="delete-overlay" id="deletePopup">
+
+    <div class="delete-popup">
+
+        <div class="delete-icon">
+            <i class="fas fa-trash"></i>
+        </div>
+
+        <h2>Delete Student</h2>
+
+        <p>
+            Are you sure you want to delete this student?
+        </p>
+
+        <div class="delete-actions">
+
+            <button id="cancelDelete">
+                Cancel
+            </button>
+
+            <button id="confirmDeleteBtn">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="logout.js"></script>
+
+<script src="manage-students.js"></script>
+
+</body>
+</html>

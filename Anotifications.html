@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - ClearanceHub</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="logout.css">
+    <link rel="stylesheet" href="Anotifications.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================
+            SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Clearance Hub</span>
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="admin-dashboard.html">
+                    <i class="fas fa-house"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="Aprofile.html">
+                    <i class="fa-regular fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="manage-students.html">
+                    <i class="fas fa-users"></i>
+                    Manage Students
+                </a>
+            </li>
+
+            <li>
+                <a href="clearance-requests.html">
+                    <i class="fas fa-file-circle-check"></i>
+                    Clearance Requests
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    <i class="fas fa-chart-column"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="Anotifications.html">
+                    <i class="fa-regular fa-bell"></i>
+                    Notifications
+                </a>
+            </li>
+
+            <li class="logout">
+                <a href="#" id="logoutBtn">
+                    <i class="fas fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ==========================
+            MAIN CONTENT
+    =========================== -->
+
+    <main class="main-content">
+
+        <!-- TOP HEADER -->
+
+        <header class="top-header">
+
+            <div class="page-title">
+                <h1>
+                <i class="fas fa-bell"></i>
+                Notifications</h1>
+            </div>
+
+            <div class="profile" onclick="goToProfile()">
+
+                <i class="fa-solid fa-circle-user"></i>
+
+                <div class="profile-info">
+                    <span class="welcome">Welcome</span>
+                    <span id="adminName">Admin</span>
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ==========================
+                NOTIFICATION CARD
+        =========================== -->
+
+        <section class="notification-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h2>All Notifications</h2>
+                    <p>
+                        Stay updated with system activities and important updates.
+                    </p>
+                </div>
+
+                <button id="markAllBtn">
+                    <i class="fas fa-check"></i>
+                    Mark all as read
+                </button>
+
+            </div>
+
+            <!-- TABLE -->
+
+            <div class="table-container">
+
+                <div class="table-header">
+                    <div>Notification</div>
+                    <div>Date</div>
+                    <div>Status</div>
+                </div>
+
+                <!-- Notification 1 -->
+
+                <div class="notification-row">
+
+                    <div class="notification-info">
+
+                        <div class="icon purple">
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div>
+                            <h4>New Clearance Request Submitted</h4>
+                            <p>
+                                John Doe(20/CSC/123456) has submitted a new
+                                clearance request.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="date">
+                        May 14, 2025<br>
+                    </div>
+
+                    <div>
+                        <span class="badge new">New</span>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="delete-btn" onclick="openDeleteModal()">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Notification 2 -->
+
+                <div class="notification-row">
+
+                    <div class="notification-info">
+
+                        <div class="icon green">
+                            <i class="fas fa-money-check-dollar"></i>
+                        </div>
+
+                        <div>
+                            <h4>Payment Successful</h4>
+                            <p>
+                                Jane Smith(20/CSC/654321) has made a payment
+                                for Faculty Dues.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="date">
+                        May 14, 2025<br>
+                    </div>
+
+                    <div>
+                        <span class="badge success">Success</span>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="delete-btn hidden">Delete</button>
+                    </div>
+
+                </div>
+
+                <!-- Notification 3 -->
+
+                <div class="notification-row">
+
+                    <div class="notification-info">
+
+                        <div class="icon orange">
+                            <i class="fas fa-circle-exclamation"></i>
+                        </div>
+
+                        <div>
+                            <h4>Document Verification Pending</h4>
+                            <p>
+                                Michael Johnson(20/CSC/789012) uploaded
+                                documents awaiting verification.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="date">
+                        May 14, 2025<br>
+                        08:15 AM
+                    </div>
+
+                    <div>
+                        <span class="badge pending">Pending</span>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="delete-btn hidden">Delete</button>
+                    </div>
+
+                </div>
+
+                <!-- Notification 4 -->
+
+                <div class="notification-row">
+
+                    <div class="notification-info">
+
+                        <div class="icon blue">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+
+                        <div>
+                            <h4>New Student Registered</h4>
+                            <p>
+                                Sarah Williams(20/CSC/345678) has registered
+                                on the system.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="date">
+                        May 13, 2025<br>
+                        04:20 PM
+                    </div>
+
+                    <div>
+                        <span class="badge new">New</span>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="delete-btn hidden">Delete</button>
+                    </div>
+
+                </div>
+
+                <!-- Notification 5 -->
+
+                <div class="notification-row">
+
+                    <div class="notification-info">
+
+                        <div class="icon red">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <h4>Clearance Request Rejected</h4>
+                            <p>
+                                David Brown(20/CSC/901234) clearance request
+                                has been rejected.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="date">
+                        May 13, 2025<br>
+                        02:10 PM
+                    </div>
+
+                    <div>
+                        <span class="badge rejected">Rejected</span>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="delete-btn hidden">Delete</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-footer">
+
+                <div>
+                    <i class="fas fa-circle-info"></i>
+                    Showing latest notifications
+                </div>
+
+                <div>
+                    Total: 5 notifications
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ==========================
+        LOGOUT POPUP
+=========================== -->
+
+<div class="logout-overlay" id="logoutOverlay">
+
+    <div class="logout-popup">
+
+        <div class="logout-icon">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </div>
+
+        <h2>Log Out</h2>
+
+        <p>
+            Are you sure you want to log out of your account?<br>
+            You will need to sign in again to access your account.
+        </p>
+
+        <div class="logout-buttons">
+
+            <button
+                class="confirm-logout"
+                id="confirmLogout">
+
+                Yes, Log Out
+
+            </button>
+
+            <button
+                class="cancel-logout"
+                id="cancelLogout">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+        <div class="logout-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <span>
+                For your security, please log out when you are done accessing your account.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Delete Notification Modal -->
+<div id="deleteModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('deleteModal')">&times;</button>
+        <div class="modal-header-icon">
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <h3>Delete Notification?</h3>
+        <p>Are you sure you want to delete this notification? This action cannot be undone.</p>
+        <div class="modal-actions">
+            <button class="btn-cancel" onclick="closeModal('deleteModal')">Cancel</button>
+            <button class="btn-confirm-delete" onclick="confirmDelete()">Delete</button>
+        </div>
+    </div>
+</div>
+<script src="Anotifications.js"></script>
+<script src="logout.js"></script>
+
+</body>
+</html>
