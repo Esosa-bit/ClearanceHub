@@ -1,0 +1,1186 @@
+/* ==========================================
+   GOOGLE FONT & RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#f4f7fc;
+    color:#333;
+
+}
+
+/* ==========================================
+   DASHBOARD LAYOUT
+========================================== */
+
+.dashboard{
+
+    display:flex;
+    min-height:100vh;
+
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar{
+
+    width:270px;
+    background:#1E293B;
+    color:#fff;
+
+    display:flex;
+    flex-direction:column;
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    height:100vh;
+
+    box-shadow:4px 0 15px rgba(0,0,0,.15);
+
+}
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    padding:30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    font-size:25px;
+    font-weight:700;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo i{
+
+    font-size:35px;
+
+    color:#A78BFA;
+
+}
+
+/* ==========================================
+   MENU
+========================================== */
+
+.menu{
+
+    list-style:none;
+
+    margin-top:30px;
+
+}
+
+.menu li{
+
+    margin:8px 18px;
+
+}
+
+.menu li a{
+
+    text-decoration:none;
+
+    color:#CBD5E1;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 20px;
+
+    border-radius:12px;
+
+    transition:.3s;
+
+    font-size:16px;
+
+}
+
+.menu li a i{
+
+    font-size:20px;
+
+    width:25px;
+
+    text-align:center;
+
+}
+
+/* Hover */
+
+.menu li a:hover{
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    color:#fff;
+
+    transform:translateX(5px);
+
+}
+
+/* Active Menu */
+
+.menu li.active a{
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    color:#fff;
+
+    box-shadow:0 8px 18px rgba(37,99,235,.35);
+
+}
+
+/* Logout */
+
+#logoutBtn{
+
+    margin-top:auto;
+    margin-bottom:25px;
+
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content{
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar{
+
+    height:85px;
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 35px;
+
+    color:#fff;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.1);
+
+}
+
+/* Dashboard Title */
+
+.topbar h2{
+
+    font-size:28px;
+
+    font-weight:600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.topbar h2 i{
+
+    font-size:30px;
+
+}
+
+/* ==========================================
+   PROFILE
+========================================== */
+
+.profile{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.profile i{
+
+    font-size:45px;
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.profile-info .welcome{
+
+    font-size:13px;
+
+    opacity:.85;
+
+}
+
+.profile-info #studentName{
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+/* ==========================================
+   CONTENT AREA
+========================================== */
+
+.card{
+
+    background:#fff;
+
+    margin:35px;
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+/* ==========================================
+   STUDENT INFORMATION CARD
+========================================== */
+
+.card h2{
+
+    font-size:28px;
+    color:#1E293B;
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    color:#64748B;
+    margin-bottom:30px;
+    font-size:15px;
+
+}
+
+/* ==========================================
+   FORM GRID
+========================================== */
+
+.form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+/* ==========================================
+   INPUT GROUP
+========================================== */
+
+.input-group{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.input-group label{
+
+    font-size:15px;
+    font-weight:600;
+    color:#334155;
+
+    margin-bottom:8px;
+
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.input-group input,
+.input-group select{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border:1px solid #CBD5E1;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    font-size:15px;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:.3s;
+
+}
+
+/* ==========================================
+   PLACEHOLDER
+========================================== */
+
+.input-group input::placeholder{
+
+    color:#94A3B8;
+
+}
+
+/* ==========================================
+   INPUT FOCUS
+========================================== */
+
+.input-group input:focus,
+.input-group select:focus{
+
+    outline:none;
+
+    border-color:#4F46E5;
+
+    box-shadow:0 0 0 4px rgba(79,70,229,.15);
+
+}
+
+/* ==========================================
+   SELECT
+========================================== */
+
+.input-group select{
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   BUTTON AREA
+========================================== */
+
+.button-area{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+/* =====================================================
+   SUCCESS POPUP
+   ===================================================== */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+/* Show popup */
+.popup-overlay.show {
+    display: flex;
+}
+
+/* Popup box */
+.popup-box {
+    width: 90%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px 30px;
+    text-align: center;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+    animation: popupAppear 0.25s ease;
+}
+
+/* Green check circle */
+.popup-check {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+
+    background: #22c55e;
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+    font-weight: 600;
+}
+
+/* Success heading */
+.popup-box h2 {
+    margin: 0 0 10px;
+
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Message */
+.popup-box p {
+    margin: 0 0 25px;
+
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* OK button */
+#popupOkBtn {
+    width: 100%;
+    max-width: 160px;
+
+    padding: 12px 25px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #7c3aed;
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#popupOkBtn:hover {
+    background: #6d28d9;
+    transform: translateY(-1px);
+}
+
+#popupOkBtn:active {
+    transform: translateY(0);
+}
+
+
+/* Popup animation */
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* ==========================================
+   SAVE BUTTON
+========================================== */
+
+.save-btn{
+
+    background:linear-gradient(135deg,#2563EB,#7C3AED);
+
+    color:#fff;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+
+}
+
+/* Hover */
+
+.save-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(37,99,235,.35);
+
+}
+
+/* Click */
+
+.save-btn:active{
+
+    transform:scale(.98);
+
+}
+
+/* ==========================================
+   FORM ANIMATION
+========================================== */
+
+.card{
+
+    animation:fadeIn .6s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+   SMOOTH SCROLLING
+========================================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#E2E8F0;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(180deg,#2563EB,#7C3AED);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#4F46E5;
+
+}
+
+/* ==========================================
+   CARD HOVER EFFECT
+========================================== */
+
+.card{
+
+    transition:.35s ease;
+
+}
+
+.card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+/* ==========================================
+   INPUT HOVER
+========================================== */
+
+.input-group input:hover,
+.input-group select:hover{
+
+    border-color:#94A3B8;
+
+}
+
+/* ==========================================
+   BUTTON TRANSITION
+========================================== */
+
+button{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+/* ==========================================
+   SIDEBAR TRANSITIONS
+========================================== */
+
+.sidebar{
+
+    transition:.35s;
+
+}
+
+.menu li{
+
+    transition:.3s;
+
+}
+
+.menu li:hover{
+
+    transform:translateX(4px);
+
+}
+
+/* ==========================================
+   PROFILE
+========================================== */
+
+.profile{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.profile:hover{
+
+    transform:scale(1.04);
+
+}
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo{
+
+    transition:.3s;
+
+}
+
+.logo:hover{
+
+    letter-spacing:.5px;
+
+}
+
+/*====================================================*
+    RESPONSIVE MEDIA QUERIES
+*====================================================*/
+
+@media (max-width: 1200px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .right-sidebar {
+        width: 100%;
+    }
+
+    .generator-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .notification-info h4 {
+        font-size: 20px;
+    }
+
+    .notification-info p {
+        font-size: 15px;
+    }
+
+    .date {
+        font-size: 15px;
+    }
+    .mobile-menu-button {
+        display: none;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 992px
+   Compact top bar
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+/* ---------------------------------------------
+       TOP BAR
+       Keep the existing top-bar content,
+       but hide Welcome and student's name.
+       --------------------------------------------- */
+
+ .profile-header {
+width: 100%;
+max-width: 100%;
+ margin: 0;
+ left: 0;
+ right: 0;
+box-sizing: border-box;
+ }
+
+ .profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }
+
+/* Hide student's name / heading */
+ .profile-info {
+display: none;
+}
+
+.profile i {
+ font-size: 35px;
+ display: block;
+ margin: 0;
+    cursor: pointer;
+}
+.mobile-menu-button{
+    display: none;
+}
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — 768px
+   Mobile layout
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* ---------------------------------------------
+       PREVENT HORIZONTAL PAGE SCROLLING
+       --------------------------------------------- */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+
+    /* ---------------------------------------------
+       MAIN CONTENT
+       Uses the FULL screen.
+       It does NOT move when sidebar opens.
+       --------------------------------------------- */
+
+    .main-content {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+
+        margin-left: 0;
+        left: 0;
+
+        transition: none;
+        overflow-y: visible;
+    }
+
+
+    /* ---------------------------------------------
+       TOP BAR
+       --------------------------------------------- */
+
+    .topbar {
+        min-height: 70px;
+        height: auto;
+
+        padding: 10px 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        gap: 10px;
+    }
+
+
+    /* Hide Welcome */
+    .topbar p {
+        display: none;
+    }
+
+
+    /* Hide student's name */
+    .topbar h1 {
+        display: none;
+    }
+
+
+    /* ONLY profile icon remains */
+    .profile {
+        display: flex;
+
+        width: auto;
+
+        width: auto;
+
+        margin-left: auto;
+
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+
+    .profile i {
+        font-size: 35px;
+        display: block;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .profile-info{
+        display: none;
+    }
+
+    .welcome,
+    #adminName {
+        display: none;
+    }
+    /* ---------------------------------------------
+       SIDEBAR
+       Hidden outside the screen
+       --------------------------------------------- */
+
+    .sidebar {
+        position: fixed;
+
+        flex-shrink: 0;
+        top: 0;
+        left: 0;
+
+        width: 250px;
+        height: 100vh;
+
+        z-index: 9999;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.3s ease;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+
+    /* Sidebar appears OVER main content */
+    .sidebar.sidebar-open {
+        transform: translateX(0);
+    }
+
+
+    /* ---------------------------------------------
+       DARK OVERLAY
+       --------------------------------------------- */
+
+    .sidebar-overlay {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100vh;
+
+        background: rgba(0, 0, 0, 0.45);
+
+        z-index: 9998;
+
+        opacity: 0;
+        visibility: hidden;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+    }
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    /* ---------------------------------------------
+       MOBILE MENU BUTTON
+       Created automatically by JavaScript
+       --------------------------------------------- */
+
+    .mobile-menu-button {
+        position: static;
+        flex-shrink: 0;
+
+        top: 12px;
+        left: 12px;
+
+        width: 44px;
+        height: 44px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 12px;
+
+        background: #ffffff;
+
+        font-size: 23px;
+
+        cursor: pointer;
+
+        z-index: 10000;
+
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+
+    /* ---------------------------------------------
+       SIDEBAR CLOSE BUTTON
+       --------------------------------------------- */
+
+    .mobile-sidebar-close {
+        position: absolute;
+
+        top: 15px;
+        right: 15px;
+
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: none;
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.15);
+
+        color: white;
+
+        font-size: 22px;
+
+        cursor: pointer;
+
+        z-index: 10001;
+    }
+
+
+    /* ---------------------------------------------
+       CONTENT
+       --------------------------------------------- */
+
+    .content,
+    .dashboard-content,
+    .page-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: visible;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* ---------------------------------------------
+       CARDS / CONTAINERS
+       --------------------------------------------- */
+
+    .card,
+    .container,
+    .form-container,
+    .student-form-container,
+    .form-card {
+        max-width: 100%;
+        overflow: visible;
+    }
+
+
+    /* ---------------------------------------------
+       TABLES
+       --------------------------------------------- */
+
+    .table-container {
+        width: 100%;
+        max-width: 100%;
+
+        overflow-x: auto;
+    }
+
+
+    /* ---------------------------------------------
+       IMAGES
+       --------------------------------------------- */
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* ---------------------------------------------
+       FORM ELEMENTS
+       --------------------------------------------- */
+
+    input,
+    select,
+    textarea {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .profile-header {
+        min-height: 65px;
+        padding: 8px 12px;
+    }
+
+
+    .profile-header .profile-icon {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+    }
+
+
+    .profile-header .profile-icon i {
+        font-size: 22px;
+    }
+
+
+    .sidebar {
+        width: 235px;
+    }
+
+
+    .mobile-menu-button {
+        width: 42px;
+        height: 42px;
+
+        top: 11px;
+        left: 11px;
+
+        font-size: 21px;
+    }
+}
+@media (max-width: 992px) {
+    .topbar h2 .fa-user-graduate{
+        display: none;
+    }
+}
+@media (min-width: 993px) {
+    .mobile-menu-button{
+        display: none;
+    }
+}
